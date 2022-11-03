@@ -30,6 +30,7 @@
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+
 -アプリケーション詳細設計書（https://docs.google.com/spreadsheets/d/1oZzlua2kp1n5loWbtbgzNo0xQ7WalY8Zeh4By9SA3aI/edit#gid=549108681）
 
 -Er図（https://drive.google.com/file/d/1m1YPsvx6uacbeD7bnHpUaBTwGglhzXnr/view?usp=sharing）
