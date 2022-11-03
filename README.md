@@ -13,16 +13,16 @@
                         
 
 ### ターゲットユーザ：
--料理好きな人
--日々の献立に迷っている人
--美味しい物を他人と共有したい人
--おすすめのお店を知りたい人
+・料理好きな人
+・日々の献立に迷っている人
+・美味しい物を他人と共有したい人
+・おすすめのお店を知りたい人
 
 
 ### 主な利用シーン：
--暇な時
--他人と共有したいと思った食べ物に出会った時
--献立に迷った時
+・暇な時
+・他人と共有したいと思った食べ物に出会った時
+・献立に迷った時
 
 
 ## 設計書
@@ -35,17 +35,19 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
--アプリケーション詳細設計書（https://docs.google.com/spreadsheets/d/1oZzlua2kp1n5loWbtbgzNo0xQ7WalY8Zeh4By9SA3aI/edit#gid=549108681）
+・アプリケーション詳細設計書（https://docs.google.com/spreadsheets/d/1oZzlua2kp1n5loWbtbgzNo0xQ7WalY8Zeh4By9SA3aI/edit#gid=549108681）
 
--Er図（https://drive.google.com/file/d/1m1YPsvx6uacbeD7bnHpUaBTwGglhzXnr/view?usp=sharing）
+・Er図（https://drive.google.com/file/d/1m1YPsvx6uacbeD7bnHpUaBTwGglhzXnr/view?usp=sharing）
 
--UI Flows会員側（https://drive.google.com/file/d/1i35zl9jUjujdNL4uXWNiADfeSc_A9pGq/view?usp=sharing）
+・UI Flows会員側（https://drive.google.com/file/d/1i35zl9jUjujdNL4uXWNiADfeSc_A9pGq/view?usp=sharing）
 
--UI Flow管理者側（https://drive.google.com/file/d/1i82JRyplTDs3sEARLVsMfeI4AQCvf2p4/view?usp=sharing）
+・UI Flow管理者側（https://drive.google.com/file/d/1i82JRyplTDs3sEARLVsMfeI4AQCvf2p4/view?usp=sharing）
 
--テーブル定義書（https://docs.google.com/spreadsheets/d/1sQnRvN82wqArPjVjOFc7325ggR8s_SxHMiw_5c_BSvk/edit?usp=sharing）
+・テーブル定義書（https://docs.google.com/spreadsheets/d/1sQnRvN82wqArPjVjOFc7325ggR8s_SxHMiw_5c_BSvk/edit?usp=sharing）
 
--ワイヤーフレーム会員側（https://drive.google.com/file/d/11PDKCa3WtoRp-6ZG8PSvb8o0rrXr1S8P/view?usp=sharing）
+・ワイヤーフレーム会員側（https://drive.google.com/file/d/11PDKCa3WtoRp-6ZG8PSvb8o0rrXr1S8P/view?usp=sharing）
+
+・ワイヤーフレーム管理者側（https://drive.google.com/file/d/1R9i3TtiSAaXkg3Ls7YyJWkTd8BRq7KyZ/view?usp=sharing）
 
 ## 使用素材
 - 使用検討中です
