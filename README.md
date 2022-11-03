@@ -39,7 +39,7 @@
 
 -UI Flow管理者側（https://drive.google.com/file/d/1i82JRyplTDs3sEARLVsMfeI4AQCvf2p4/view?usp=sharing）
 
--テーブル定義書（）
+-テーブル定義書（https://docs.google.com/spreadsheets/d/1sQnRvN82wqArPjVjOFc7325ggR8s_SxHMiw_5c_BSvk/edit?usp=sharing）
 
 ## 使用素材
 - 使用検討中です
