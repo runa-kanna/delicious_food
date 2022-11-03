@@ -31,7 +31,7 @@
 - JSライブラリ：jQuery
 - IDE：Cloud9
 -アプリケーション詳細設計書（https://docs.google.com/spreadsheets/d/1oZzlua2kp1n5loWbtbgzNo0xQ7WalY8Zeh4By9SA3aI/edit#gid=549108681）
--Er図（https://app.diagrams.net/#G1m1YPsvx6uacbeD7bnHpUaBTwGglhzXnr）
+-Er図（https://drive.google.com/file/d/1m1YPsvx6uacbeD7bnHpUaBTwGglhzXnr/view?usp=sharing）
 -UI Flows会員側（https://app.diagrams.net/#G1i35zl9jUjujdNL4uXWNiADfeSc_A9pGq）
 -UI Flow管理者側（https://app.diagrams.net/#G1i82JRyplTDs3sEARLVsMfeI4AQCvf2p4）
 -テーブル定義書（）
