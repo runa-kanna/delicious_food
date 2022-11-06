@@ -23,19 +23,23 @@ class Public::FoodsController < ApplicationController
   def index
     @foods = Food.all
   end
-  
+
   #@foodには特定のidのFoodモデルを格納
   def show
     @food = Food.find(params[:id])
   end
-  
+
+  #編集するFoodレコードを取得
   def edit
     @food = Food.find(params[:id])
-  
-  
-  
-  
-  
+  end
+
+  def update
+    food = Food.find(params[:id])
+    food.update(food_params)
+    redirect_to food_path(food.id)
+  end
+
   def destroy
     #削除するFoodレコードを取得
     @food = Food.find(params[:id])
@@ -44,7 +48,7 @@ class Public::FoodsController < ApplicationController
     #Foodの一覧ページへのパス
     redirect_to foods_path
   end
-    
+
 
 
 
