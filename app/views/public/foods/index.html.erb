@@ -5,7 +5,7 @@
   <%= link_to food_path(food.id) do %>
     <%= image_tag food.get_image %>
   <% end %>
-  <p>投稿ユーザー画像:<%= image_tag 'no_image.jpg' %></p>
+  <p>投稿ユーザー画像：<%= image_tag food.user.get_profile_image(100,100) %></p>
   <p>タイトル:<%= food.title %></p>
   <p>説明:<%= food.body %></p>
   <p>ユーザーネーム:<%= food.user.name %></p>
