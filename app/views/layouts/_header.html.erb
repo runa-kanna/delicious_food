@@ -1,0 +1,39 @@
+<header>
+  <!--ユーザーがログインしている時-->
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "トップページ", root_path %>
+      </li>
+      <li>
+        <%= link_to "マイページ", user_path(current_user.id) %>
+      </li>
+      <li>
+        <%= link_to "投稿一覧", foods_path %>
+      </li>
+      <li>
+        <%= link_to "ユーザー一覧", users_path %>
+      </li>
+      <li>
+        <%= link_to "新規投稿", new_food_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+    <!--管理者がログインしているとき-->
+    <% elsif admin_signed_in? %>
+      <li>
+        <%= link_to 'ログアウト', destroy_admin_session_path, method: :delete %>
+      </li>
+    <!--ログインしていないとき-->
+    <% else %>
+      <li>
+        <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "ログイン", new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to 'about', about_path, class: "btn btn-outline-dark ml-2 mt-3 mb-3", style:"margin-right:20px;" %>
+      </li>
+    <% end %>
+  </header>

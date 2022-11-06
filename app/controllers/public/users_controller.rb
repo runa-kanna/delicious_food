@@ -1,5 +1,5 @@
 class Public::UsersController < ApplicationController
-  
+
   #テーブル内に存在する全てのレコードのインスタンスを代入
   def index
     @users = User.all
@@ -26,11 +26,23 @@ class Public::UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def unsubscribe
+    @user = User.find(params[:id])
+  end
+
+  #退会処理
+  def withdraw
+    @user = current_customer
+    @user.update(is_active: false)
+    reset_session
+    flash[:notice] = "退会処理を実行いたしました"
+    redirect_to root_path
+  end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :profile_image, :introduction)
+    params.require(:user).permit(:name, :profile_image, :introduction, :is_active,)
   end
 
 end
