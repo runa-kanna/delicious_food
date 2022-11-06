@@ -11,14 +11,14 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'homes/top'
   end
-  
+
   #ユーザー側
   scope module: :public do
     resources :foods
 
     resources :users,only:[:index, :show, :edit, :update]
-    get 'users/unsubscribe',as: 'unsubscribe'
-    patch 'users/withdraw',as: 'withdraw'
+    get 'users/:id/unsubscribe' => 'users#unsubscribe',as: 'unsubscribe_user'
+    patch 'users/:id/withdraw' => 'users#withdraw',as: 'withdraw_user'
 
     root :to =>"homes#top"
     get '/about'=>'homes#about',as: 'about'

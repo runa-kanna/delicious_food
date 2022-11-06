@@ -9,8 +9,8 @@ class User < ApplicationRecord
   
   validates :name, uniqueness: true,
     length: { minimum: 2, maximum: 20 }
-    
   validates :introduction, length: { maximum: 50 }
+  #validates :profile_image, presence: true
   
   def get_profile_image(width, height)
     unless profile_image.attached?
