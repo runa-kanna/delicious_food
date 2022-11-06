@@ -1,0 +1,13 @@
+<h1>投稿詳細</h1>
+
+<div>
+  <%= image_tag @food.get_image %>
+  <p>ショップ名：<%= @food.title %></p>
+  <p>説明：<%= @food.body %></p>
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpg' %></p>
+  <p>ユーザーネーム：<%= @food.user.name %></p>
+  <p>投稿日：<%= @food.created_at.strftime('%Y/%m/%d') %></p>
+  <% if @food.user == current_user %>
+    <%= link_to "削除", food_path(@food), method: :delete %>
+  <% end %>
+</div>
