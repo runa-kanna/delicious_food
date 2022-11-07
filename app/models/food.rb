@@ -1,18 +1,27 @@
 class Food < ApplicationRecord
 
-  has_one_attached :image
+  has_many_attached :images
   belongs_to :user, optional: true
 
   validates :title, presence: true
   validates :body, presence: true
-  #validates :image, presence: true
+  validate :image_length
 
   def get_image
-    unless image.attached?
+    unless images.attached?
       file_path = Rails.root.join('app/assets/images/noimage.jpg')
-      image.attach(io: File.open(file_path),filename:'default-image.jpg',content_type:'image/jpeg')
+      images.attach(io: File.open(file_path),filename:'default-image.jpg',content_type:'image/jpeg')
     end
-    image
+    images
+  end
+
+
+  private
+
+  def image_length
+    if images.length >= 4
+      errors.add(:images, "は3枚以内にしてください")
+    end
   end
 
 end

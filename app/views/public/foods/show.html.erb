@@ -1,7 +1,12 @@
 <h1>投稿詳細</h1>
 
 <div>
-  <%= image_tag @food.get_image %>
+
+  <% @food.images.each do |image| %>
+      <%= image_tag(image, width:100) %>
+  <% end %>
+
+
   <p>ショップ名：<%= @food.title %></p>
   <p>説明：<%= @food.body %></p>
   <p>投稿ユーザー画像：<%= image_tag @food.user.get_profile_image(100,100) %></p>
