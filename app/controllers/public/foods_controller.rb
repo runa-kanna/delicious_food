@@ -36,8 +36,17 @@ class Public::FoodsController < ApplicationController
 
   def update
     food = Food.find(params[:id])
-    food.update(food_params)
-    redirect_to food_path(food.id)
+    if  params[:food][:image_ids]
+        params[:food][:image_ids].each do |image_id|
+          image = food.images.find(image_id)
+          image.purge
+        end
+    end
+    if food.update(food_params)
+       redirect_to food_path(food.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
