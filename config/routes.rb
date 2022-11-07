@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  
+  #admin側
   namespace :admin do
     #投稿
     resources :foods, only: [:index, :show, :destroy] do
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   scope module: :public do
     #投稿
     resources :foods do
+      #いいね
+      resource :favorites, only: [:create, :destroy]
       #コメント
       resources :comments, only: [:create, :destroy]
     end
