@@ -3,7 +3,7 @@
 <% @foods.each do |food| %>
 <div>
   <%= link_to admin_food_path(food.id) do %>
-    <%= image_tag food.get_image %>
+    <%= image_tag food.get_image[0] %>
   <% end %>
   <p>投稿ユーザー画像：<%= image_tag food.user.get_profile_image(100,100) %></p>
   <p>タイトル:<%= food.title %></p>
