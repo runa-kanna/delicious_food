@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
   namespace :admin do
-    get 'foods/index'
-    get 'foods/show'
+    #投稿
+    resources :foods, only: [:index, :show, :destroy] do
+      #コメント
+      resources :comments, only: [:destroy]
+    end
   end
   namespace :admin do
     get 'users/index'
@@ -12,16 +15,23 @@ Rails.application.routes.draw do
     get 'homes/top'
   end
 
+
   #ユーザー側
   scope module: :public do
-    resources :foods
-
+    #投稿
+    resources :foods do
+      #コメント
+      resources :comments, only: [:create, :destroy]
+    end
+    #user
     resources :users,only:[:index, :show, :edit, :update]
     get 'users/:id/unsubscribe' => 'users#unsubscribe',as: 'unsubscribe_user'
     patch 'users/:id/withdraw' => 'users#withdraw',as: 'withdraw_user'
 
+    #top.about
     root :to =>"homes#top"
     get '/about'=>'homes#about',as: 'about'
+
   end
 
 
@@ -47,7 +57,7 @@ Rails.application.routes.draw do
   devise_for :admin, controllers: {
     sessions: "admin/sessions"
   }
-  
+
   #ゲストユーザー用
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'

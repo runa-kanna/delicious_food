@@ -1,7 +1,11 @@
-<h1>User一覧</h1>
+<h1>管理者User一覧</h1>
 
 
 <% @users.each do |user| %>
+
+  <%= link_to admin_user_path(user) do %>
+    <%= image_tag user.get_profile_image(100,100) %>
+  <% end %>
 
 　<p>UserID</p>
 　<span><%= user.id %></span>
