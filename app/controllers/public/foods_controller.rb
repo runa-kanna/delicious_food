@@ -56,7 +56,7 @@ class Public::FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:title, :body, :image)
+    params.require(:food).permit(:title, :body, images: [])
   end
 
 end
