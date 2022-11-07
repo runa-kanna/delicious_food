@@ -8,9 +8,19 @@
   <h4>本文</h4>
   <%= f.text_area :body %>
 
-  <label for="inputImage">投稿画像</label>
-  <%= f.file_field :image, placeholder: "プロフィール画像", accept: "image/*" %>
+  <h4>画像</h4>
+    <%= f.file_field :images, multiple: true %>
+
+
+  <% if @food.images.present? %>
+    <p>現在登録されている画像（削除するものはチェックしてください）</p>
+    <% @food.images.each do |image| %>
+      <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
+      <%= image_tag image, size:"100x100" %> <br>
+    <% end %>
+  <% end %>
+
   <%= f.submit "変更を保存" %>
-  <%= link_to "削除", food_path(@food), method: :delete %>
+  <%= link_to "現在の投稿記事を全て削除", food_path(@food), method: :delete %>
 
 <% end %>
