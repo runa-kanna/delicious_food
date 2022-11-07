@@ -1,6 +1,7 @@
 class Food < ApplicationRecord
 
   has_many_attached :images
+  has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   belongs_to :user, optional: true
 
@@ -14,6 +15,10 @@ class Food < ApplicationRecord
       images.attach(io: File.open(file_path),filename:'default-image.jpg',content_type:'image/jpeg')
     end
     images
+  end
+  
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
   end
 
 
