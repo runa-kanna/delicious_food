@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
 
   # ユーザー用
-  # URL /customers/sign_in ...
+  # URL /users/sign_in ...
   devise_for :user, controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -47,6 +47,11 @@ Rails.application.routes.draw do
   devise_for :admin, controllers: {
     sessions: "admin/sessions"
   }
+  
+  #ゲストユーザー用
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
