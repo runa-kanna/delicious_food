@@ -54,9 +54,9 @@ ActiveRecord::Schema.define(version: 2022_11_07_032927) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "foods_id"
-    t.text "comment", null: false
+    t.integer "user_id"
+    t.integer "food_id"
+    t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -24,9 +24,11 @@ class Public::FoodsController < ApplicationController
     @foods = Food.all
   end
 
-  #@foodには特定のidのFoodモデルを格納
   def show
+    
     @food = Food.find(params[:id])
+    #コメントを投稿するためのインスタンス変数
+    @comment = Comment.new
   end
 
   #編集するFoodレコードを取得

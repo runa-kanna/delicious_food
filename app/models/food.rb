@@ -17,12 +17,4 @@ class Food < ApplicationRecord
   end
 
 
-  private
-
-  def image_length
-    if images.length >= 4
-      errors.add(:images, "は3枚以内にしてください")
-    end
-  end
-
 end
