@@ -22,17 +22,20 @@ Rails.application.routes.draw do
     #投稿
     resources :foods do
       #いいね
-      resource :favorites, only: [:create, :destroy]
+      resource :favorites, only: [:index, :create, :destroy]
       #コメント
       resources :comments, only: [:create, :destroy]
     end
     #user
     resources :users,only:[:index, :show, :edit, :update] do
+      #いいね一覧
+      get 'favorites' => 'users#favorites', as: 'favorites'
       # フォロー機能
       resource :relationships, only: [:create, :destroy]
       get 'followings' => 'relationships#followings', as: 'followings'
       get 'followers' => 'relationships#followers', as: 'followers'
     end
+
     # 退会機能
     get 'users/:id/unsubscribe' => 'users#unsubscribe',as: 'unsubscribe_user'
     patch 'users/:id/withdraw' => 'users#withdraw',as: 'withdraw_user'

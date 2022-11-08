@@ -1,0 +1,33 @@
+<h1>いいね一覧</h1>
+
+<% @favorite_foods.each do |food| %>
+<div>
+  <%= link_to food_path(food.id) do %>
+    <%= image_tag food.get_image[0] %>
+  <% end %>
+
+  <p>投稿ユーザー画像：<%= image_tag food.user.get_profile_image(100,100) %></p>
+  <p>タイトル:<%= food.title %></p>
+  <p>説明:<%= food.body %></p>
+  <p>ユーザーネーム:<%= food.user.name %></p>
+  <p><%= link_to "#{food.comments.count} コメント", food_path(food.id) %></p>
+
+  <div>
+    <% if food.favorited_by?(current_user) %>
+      <p>
+        <%= link_to food_favorites_path(food), method: :delete do %>
+          ♥<%= food.favorites.count %> いいね
+        <% end %>
+      </p>
+      <% else %>
+      <p>
+        <%= link_to food_favorites_path(food), method: :post do %>
+          ♡<%= food.favorites.count %> いいね
+        <% end %>
+      </p>
+    <% end %>
+  </div>
+
+
+</div>
+<% end %>
