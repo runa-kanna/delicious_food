@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
 
-  #admin側
+  #管理者側
   namespace :admin do
+    #top
+    get '/' =>'homes#top'
+    #user
+    resources :users, only:[:index, :show, :edit, :update]
     #投稿
     resources :foods, only: [:index, :show, :destroy] do
       #コメント
       resources :comments, only: [:destroy]
     end
-  end
-  namespace :admin do
-    get 'users/index'
-    get 'users/show'
-  end
-  namespace :admin do
-    get 'homes/top'
+    #search
+    get "search" => "searches#search"
   end
 
 
@@ -40,20 +39,10 @@ Rails.application.routes.draw do
     get 'users/:id/unsubscribe' => 'users#unsubscribe',as: 'unsubscribe_user'
     patch 'users/:id/withdraw' => 'users#withdraw',as: 'withdraw_user'
 
-    #top.about
+    #top.about.searth
     root :to =>"homes#top"
     get '/about'=>'homes#about',as: 'about'
-
-  end
-
-
-  #管理者
-  namespace :admin do
-    resources :users, only:[:index, :show, :edit, :update]
-
-    resources :foods, only:[:index, :show, :destroy]
-
-    get '/' =>'homes#top'
+    get "search" => "searches#search"
   end
 
 
