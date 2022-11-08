@@ -1,5 +1,18 @@
-<h1>topページ</h1>
+<div class="content">
+    <div class="top-content wrapper">
+        <h2 class="page-title">Thank you for using our service.</h2>
+        <p>ちょっとした息抜きにぜひご利用ください</p>
 
-    <%= image_tag "hamburger.jpg", class: "images" %>
-    <%= image_tag "pancake.jpg", class: "images" %>
-    <%= image_tag "pork_cutlet.jpg", class: "images" %>
+    <!-- ログインしたらボタンは消える -->
+    <% if user_signed_in? %>
+    <% else%>
+        <div class="signup-button">
+            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-dark" %>
+        </div>
+        <div class="login-button">
+            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-dark" %>
+        </div>
+    <% end %>
+
+    </div>
+</div>
