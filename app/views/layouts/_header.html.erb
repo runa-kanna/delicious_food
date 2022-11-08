@@ -28,6 +28,15 @@
           <li>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %>
           </li>
+          <!-- 検索窓 -->
+            <div class="search_form">
+              <%= form_with url: search_path, local: true, method: :get do |f| %>
+                <%= f.text_field :word %>
+                <%= f.select :range, options_for_select([['User'], ['Food']]) %>
+                <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+                <%= f.submit "検索", class: "btn btn-primary" %>
+              <% end %>
+            </div>
         <!--管理者がログインしているとき-->
         <% elsif admin_signed_in? %>
           <li>
@@ -39,6 +48,15 @@
           <li>
             <%= link_to '投稿一覧', admin_foods_path, class: 'nav-link text-dark' %>
           </li>
+          <!-- 検索窓 -->
+            <div class="search_form">
+              <%= form_with url: admin_search_path, local: true, method: :get do |f| %>
+                <%= f.text_field :word %>
+                <%= f.select :range, options_for_select([['User'], ['Food']]) %>
+                <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+                <%= f.submit "検索", class: "btn btn-primary" %>
+              <% end %>
+            </div>
         <!--ログインしていないとき-->
         <% else %>
           <li>
