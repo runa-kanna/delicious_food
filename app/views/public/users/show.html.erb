@@ -10,6 +10,9 @@
   <h3>フォロワー</h3>
   <%= link_to @user.followers.count, user_followers_path(@user) %>
 
+  <!-- いいね一覧 -->
+  <%= link_to "いいねした投稿一覧ページへ飛ぶ", user_favorites_path(@user) %>
+
   <!-- フォロー機能 -->
   <% if current_user != @user%>
     <% if current_user.following?(@user) %>
