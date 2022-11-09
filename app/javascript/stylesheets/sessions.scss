@@ -1,0 +1,25 @@
+/* ログイン画面のタイトルと背景色 */
+.login-title {
+  font-size: 5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 5%;
+  padding-left: 10%;
+}
+/* フォーム */
+.login-form {
+    font-family: 'Philosophr', serif;
+    padding-top: 20px;
+    padding-left: 10%;
+}
+/* ログインボタンの配置 */
+.login-actions {
+    padding-top: 10px;
+}
+/* 新規会員登録リンク */
+.login-guidance {
+    padding-top: 20px;
+    padding-left: 10%;
+    padding-bottom: 20%;
+}
