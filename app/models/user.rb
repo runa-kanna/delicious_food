@@ -23,7 +23,7 @@ class User < ApplicationRecord
   validates :name, uniqueness: true,
     length: { minimum: 2, maximum: 20 }
   validates :introduction, length: { maximum: 50 }
-  validates :profile_image, presence: true
+  #validates :profile_image, presence: true
   
   # プロファイル画像と画像を設定していない場合の処理
   def get_profile_image(width, height)

@@ -1,8 +1,65 @@
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+ 
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.images{
-  width: 50vw;
-  height: auto;
+/* topページのレイアウト */
+/* 画面中央と余白・の指定 */
+.top-content {
+  background-size: cover;
+  background-image: url(pancake.jpg);
+  background-color: #ddd;
+  background-blend-mode: soft-ligth;
+  min-height: 100vh;
+  background-position: center top;
+  text-align:center;
+  padding-top: 10%;
+}
+/* pタグのフォントサイズと余白の指定 */
+.top-content p {
+ font-size: 1.125rem;
+ margin: 10px 0 42px;
+}
+/* 見出し */
+.top-title {
+  font-size: 5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+/* 新規登録ボタン */
+.signup-button {
+  padding: 18px 32px;
+  margin-top: 30px;
+}
+/* ログインボタン */
+.login-button {
+  padding: 18px 32px;
+  margin: 30px;
+}
+
+ /* aboutページのスライドショー */
+ .image1 {
+  background-image: url(hamburger.jpg);
+}
+.image2 {
+  background-image: url(supa.jpg);
+}
+.image3 {
+  background-image: url(rokomoko.jpg);
+}
+.image4 {
+  background-image: url(omuraisu.jpg);
+}
+.image5 {
+  background-image: url(cafe2.jpg);
+}
+#container{
+  height: 700px;
 }
