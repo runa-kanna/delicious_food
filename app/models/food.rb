@@ -7,7 +7,7 @@ class Food < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validate :image_length
+  #validate :image_length
 
   def get_image
     unless images.attached?
