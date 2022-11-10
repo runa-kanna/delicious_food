@@ -1,5 +1,26 @@
 Rails.application.routes.draw do
 
+  # ユーザー用
+  # URL /users/sign_in ...
+  devise_for :user, controllers: {
+    registrations: "public/registrations",
+    sessions: 'public/sessions'
+  }
+  
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
+    #ゲストユーザー用
+  devise_scope :user do
+    get 'users_guest_sign_in', to: 'users/sessions#guest_sign_in'
+  end
+
+  # 管理者用
+  # URL /admin/sign_in ...
+  devise_for :admin, controllers: {
+    sessions: "admin/sessions"
+  }
   #管理者側
   namespace :admin do
     #top
@@ -43,25 +64,6 @@ Rails.application.routes.draw do
     root :to =>"homes#top"
     get '/about'=>'homes#about',as: 'about'
     get "search" => "searches#search"
-  end
-
-
-  # ユーザー用
-  # URL /users/sign_in ...
-  devise_for :user, controllers: {
-    registrations: "public/registrations",
-    sessions: 'public/sessions'
-  }
-
-  # 管理者用
-  # URL /admin/sign_in ...
-  devise_for :admin, controllers: {
-    sessions: "admin/sessions"
-  }
-
-  #ゲストユーザー用
-  devise_scope :user do
-    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
