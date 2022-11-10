@@ -1,10 +1,11 @@
 <h1>投稿詳細</h1>
 
 <div>
-
-  <% @food.images.each do |image| %>
-      <%= image_tag(image, width:100) %>
-  <% end %>
+  <div id="slider">
+    <% @food.images.each do |image| %>
+      <%= image_tag(image, width:200) %>
+    <% end %>
+  </div>
 
   <p>ショップ名：<%= @food.title %></p>
   <p>説明：<%= @food.body %></p>
