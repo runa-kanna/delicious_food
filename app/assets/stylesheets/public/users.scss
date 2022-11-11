@@ -1,3 +1,97 @@
 // Place all the styles related to the public/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* user詳細ページ */
+/* 背景 */
+.user-content {
+  background-size: cover;
+  background-image: url(cafe.jpg);
+  min-height: 100vh;
+  background-position: center top;
+}
+/* 見出し */
+.mypage-title {
+  font-size: 5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 7%;
+  padding-left: 10%;
+}
+/* userの名前 */
+.user-name {
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 5%;
+  padding-left: 50%;
+}
+/* 自己紹介文 */
+.user-text {
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-left: 50%;
+  padding-top: 3%;
+}
+/* 画像とフォロー */
+.image-follow {
+  padding-top: 3%;
+  padding-left: 50%;
+  font-size: 0;
+}
+/* 画像 */
+.user-image {
+  display: inline-block;
+  font-size: 16px;
+}
+/* follow */
+.user-follow {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 30px;
+} 
+.followings {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 30px;
+}
+.followers {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 30px;
+}
+/* プロファイル編集 */
+.user-edit {
+  padding-top: 3%;
+  padding-left: 70%;
+}
+/* 今までの投稿 */
+.food-all {
+  padding-top: 3%;
+  padding-left: 70%;
+}
+/* いいねした投稿へのリンク */
+.favorites-link {
+  padding-top: 3%;
+  padding-left: 70%;
+  padding-bottom: 5%;
+}
+
+/* user編集画面 */
+.cover-user-edit {
+  height: 100%;
+  width: 100%;
+  background-image: url();
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
+  background-size: 100% 100%;
+}
