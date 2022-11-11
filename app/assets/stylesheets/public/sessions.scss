@@ -13,8 +13,8 @@
 .login-content {
   background-size: cover;
   background-image: url(cafe.jpg);
-  background-color: #ddd;
-  background-blend-mode: darken;
+  background-color: rgba(#fff, 0.4);
+  background-blend-mode: overlay;
   min-height: 100vh;
   background-position: center top;
 }

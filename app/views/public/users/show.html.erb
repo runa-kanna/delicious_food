@@ -21,12 +21,10 @@
     </div>
     <!--フォロワーとフォロー中 -->
     <div class="followings">
-      <p>フォロー中</p>
-      <%= link_to @user.followings.count, user_followings_path(@user) %>
+      <h4>フォロー中  <%= link_to @user.followings.count, user_followings_path(@user) %></h4>
     </div>
     <div class="followers">
-      <p>フォロワー</p>
-      <%= link_to @user.followers.count, user_followers_path(@user) %>
+      <h4>フォロワー  <%= link_to @user.followers.count, user_followers_path(@user) %></h4>
     </div>
     
   </div>

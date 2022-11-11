@@ -12,9 +12,9 @@
 /* 画面中央と背景・余白の指定 */
 .signup-content {
   background-size: cover;
-  background-color: #ddd;
   background-image: image-url('cafe2.jpg');
-  background-blend-mode: darken;
+  background-color: rgba(#fff, 0.4);
+  background-blend-mode: overlay;
   min-height: 100vh;
   background-position: center top;
 }
