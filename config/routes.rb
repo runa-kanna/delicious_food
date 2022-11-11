@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # ユーザー用
+  # ユーザー用ログイン・新規登録
   # URL /users/sign_in ...
   devise_for :user, controllers: {
     registrations: "public/registrations",
@@ -11,16 +11,18 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
-    #ゲストユーザー用
+    #ゲストユーザー用ログイン
   devise_scope :user do
     get 'users_guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
-  # 管理者用
+  # 管理者用ログイン
   # URL /admin/sign_in ...
   devise_for :admin, controllers: {
     sessions: "admin/sessions"
   }
+  
+  
   #管理者側
   namespace :admin do
     #top
@@ -48,6 +50,8 @@ Rails.application.routes.draw do
     end
     #user
     resources :users,only:[:index, :show, :edit, :update] do
+      #user/idのいままでの投稿一覧
+      get 'history' => 'users#history', as: 'history'
       #いいね一覧
       get 'favorites' => 'users#favorites', as: 'favorites'
       # フォロー機能

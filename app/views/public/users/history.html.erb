@@ -1,3 +1,5 @@
+<h1><% @user.name %>さんの今までの投稿</h1>
+
 <div class="card-list-container py-5">
   <% @foods.each do |food| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
@@ -31,9 +33,6 @@
                   ♡<%= food.favorites.count %> いいね
                 <% end %>
               </p>
-              <P>
-                <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
-              </P>
             <% end %>
         </span>
         </div>

@@ -21,7 +21,7 @@ class Public::FoodsController < ApplicationController
 
   #テーブル内に存在する全てのレコードのインスタンスを代入
   def index
-    @foods = Food.all
+    @foods = Food.all.order(created_at: :desc)
   end
 
   def show

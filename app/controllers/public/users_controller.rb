@@ -10,7 +10,7 @@ class Public::UsersController < ApplicationController
   def show
     #URLに記載されたIDを参考に、必要なUserモデルを取得
     @user = User.find(params[:id])
-    #特定のユーザ（@user）に関連付けられた投稿全て（.foods）を取得し@foodsに渡す
+    #特定のユーザ（@user）に関連付けられた1つの投稿全て（.foods）のデータを取得し@foodsに渡す
     @foods = @user.foods
   end
 
@@ -47,7 +47,13 @@ class Public::UsersController < ApplicationController
     favorites = Favorite.where(user_id: @user.id).pluck(:food_id)
     @favorite_foods = Food.find(favorites)
   end
-
+  
+  #user/idの投稿履歴
+  def history
+    @user = User.find_by(params[:user_id])
+    @foods = Food.where(user_id:params[:user_id]).order(created_at: :desc)
+  end
+    
 
   private
 
