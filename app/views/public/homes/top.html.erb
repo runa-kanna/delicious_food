@@ -1,16 +1,17 @@
 <div id="top" class="top-content";>
-    <h2 class="top-title">Thank you for using our service.</h2>
-    <p>ちょっとした息抜きにぜひご利用ください</p>
-
-    <!-- ログインしたらボタンは消える -->
-    <% if user_signed_in? %>
-    <% else%>
-        <div class="signup-button">
-            <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-dark" %>
-        </div>
-        <div class="login-button">
-            <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-dark" %>
-        </div>
-    <% end %>
-
+    <div class="background-white">
+        <h2 class="top-title">Thank you for using our service.</h2>
+        <p>ちょっとした息抜きにぜひご利用ください</p>
+    
+        <!-- ログインしたらボタンは消える -->
+        <% if user_signed_in? %>
+        <% else%>
+            <div class="signup-button">
+                <%= link_to "新規登録", new_user_registration_path, class: "btn btn-outline-dark" %>
+            </div>
+            <div class="login-button">
+                <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-dark" %>
+            </div>
+        <% end %>
+    </div>
 </div>
