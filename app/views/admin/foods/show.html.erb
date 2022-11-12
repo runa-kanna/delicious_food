@@ -1,34 +1,68 @@
-<h1>管理者側の投稿詳細ページ</h1>
-
+<div class="food-content">
+  <h2 class="food-title">投稿詳細</h2>
+  
+  <div class="food-box">
+    <table>
+      <td style="width: 150px"><%= image_tag @food.user.get_profile_image(100,100) %></td>
+      <td class="food-user-name"><%= @food.user.name %></td>
+    </table>
+    
+    <div class="food-titles">
+      title：<%= @food.title %>
+    </div>
+    <div class="food-body">
+      説明：<%= @food.body %>
+    </div>
+    <div class="food-image">
+      <% @food.images.each do |image| %>
+        <%= image_tag(image, width:300) %>
+      <% end %>
+    </div>
+    <div class="posted_date">
+     <%= @food.created_at.strftime('%Y/%m/%d') %>
+    </div>
+      
+    <table class="food-box1">
+      
+      <td style="width: 30%">
+        ♥<%= @food.favorites.count %> いいね
+      </td>
+      
+      <td style="width: 30%">
+        コメント <i class="far fa-comment"></i>：<%= @food.comments.count %>
+      </td>
+    </table>
+    
+    <div class="food-edit-button">
+      <%= link_to "記事を削除", admin_food_path(@food), method: :delete, class: "btn btn-outline-dark" %>
+    </div>
+    
+    <div class="food-box2">
+      
+      <% @food.comments.each do |comment| %>
+      <h3>コメント <i class="far fa-comment"></i></h3>
+        <table>
+          <td style="width: 120px">
+            <%= image_tag comment.user.get_profile_image(100,100) %>
+          </td>
+          <td>
+            <%= comment.user.name %>
+          </td>
+        </table>
+        
+        <div class="food-box3">
+          <div>
+            <%= comment.comment %>
+          </div>
+          <div class="posted_date">
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+          </div>
+          <div class="posted_date">
+            <%= link_to "削除", admin_food_comment_path(comment.food, comment), method: :delete, class: "btn btn-outline-dark" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>  
 <div>
-
-  <h3>投稿</h3>
-
-  <% @food.images.each do |image| %>
-      <%= image_tag(image, width:100) %>
-  <% end %>
-
-  <p>タイトル：<%= @food.title %></p>
-  <p>説明：<%= @food.body %></p>
-  <p>投稿ユーザー画像：<%= image_tag @food.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム：<%= @food.user.name %></p>
-  <p>投稿日：<%= @food.created_at.strftime('%Y/%m/%d') %></p>
-  <p>♥<%= @food.favorites.count %> いいね</p>
-
-
-  <%= link_to "記事を削除", admin_food_path(@food), method: :delete %>
-
-  <div>
-
-  <h3>コメント</h3>
-
-  <p>コメント件数：<%= @food.comments.count %></p>
-  <% @food.comments.each do |comment| %>
-    <p><%= image_tag @food.user.get_profile_image(100,100) %></p>
-    <%= comment.user.name %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-    <%= link_to "コメント削除", admin_food_comment_path(comment.food, comment), method: :delete %>
-  <% end %>
-</div>
-
-</div>

@@ -1,3 +1,5 @@
+<h1>投稿履歴</h1>
+
 <div class="card-list-container py-5">
   <% @foods.each do |food| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
@@ -17,9 +19,11 @@
           </p>
           <p class="card-text">説明：<%= food.body %></p>
           <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
-          <span><%= link_to "#{food.comments.count} コメント", admin_food_path(food.id), class:"text-dark" %></span>
-          <span>♥<%= food.favorites.count %> いいね</span>
-          <P>
+          <span><%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
+          <span>
+            ♡<%= food.favorites.count %> いいね
+        　</span>
+        　<P>
             <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
           </p>
           <p>

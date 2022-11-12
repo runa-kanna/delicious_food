@@ -27,6 +27,13 @@ class Admin::UsersController < ApplicationController
       render :edit
     end
   end
+  
+  #user/idの投稿履歴
+  def history
+    @user = User.find_by(params[:user_id])
+    @foods = Food.where(user_id:params[:user_id]).order(created_at: :desc)
+  end
+    
 
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction, :is_active)
