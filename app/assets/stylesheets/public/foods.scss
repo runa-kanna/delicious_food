@@ -8,3 +8,73 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* foodの詳細ページ */
+/* 背景 */
+.food-content {
+  background-size: cover;
+  background-image: url(cafe2.jpg);
+  background-color: rgba(#fff, 0.4);
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  background-position: center top;
+}
+/* 見出し */
+.food-title {
+  font-size: 5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+/* 　*/
+.food-box {
+  padding: 0 20%;
+  padding-top: 2%;
+}
+/* user-name */
+.food-user-name {
+  font-size: 1.25rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.food-titles {
+  font-size: 1.5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 2%;
+}
+.food-body {
+  font-size: 1.5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 2%;
+}
+.food-image {
+  padding-top: 2%;
+  text-align:  center;
+}
+.posted_date {
+  text-align:right;
+  font-size: 1.25rem;
+}
+/*  */
+.food-box1 {
+  text-align:  center;
+  font-size: 1.25rem;
+}
+.food-edit-button {
+  text-align:right;
+  font-size: 1.25rem;
+}
+.food-box2 {
+  padding: 5% 6%;
+  font-size: 1.25rem;
+}
+.food-box3 {
+  padding: 2% 6%;
+}

@@ -1,52 +1,89 @@
-<h1>投稿詳細</h1>
-
-<div>
-  <div id="slider">
-    <% @food.images.each do |image| %>
-      <%= image_tag(image, width:200) %>
-    <% end %>
-  </div>
-
-  <p>ショップ名：<%= @food.title %></p>
-  <p>説明：<%= @food.body %></p>
-  <p>投稿ユーザー画像：<%= image_tag @food.user.get_profile_image(100,100) %></p>
-  <p>ユーザーネーム：<%= @food.user.name %></p>
-  <p>投稿日：<%= @food.created_at.strftime('%Y/%m/%d') %></p>
-  <% if @food.user == current_user %>
-    <%= link_to "投稿編集", edit_food_path(@food.id) %></p>
-  <% end %>
-</div>
-
-<div>
-  <% if @food.favorited_by?(current_user) %>
-    <p>
-      <%= link_to food_favorites_path(@food), method: :delete do %>
-        ♥<%= @food.favorites.count %> いいね
+<div class="food-content">
+  <h2 class="food-title">投稿詳細</h2>
+  
+  <div class="food-box">
+    <table>
+      <td style="width: 150px"><%= image_tag @food.user.get_profile_image(100,100) %></td>
+      <td class="food-user-name"><%= @food.user.name %></td>
+    </table>
+    
+    <div class="food-titles">
+      title：<%= @food.title %>
+    </div>
+    <div class="food-body">
+      説明：<%= @food.body %>
+    </div>
+    <div class="food-image">
+      <% @food.images.each do |image| %>
+        <%= image_tag(image, width:300) %>
       <% end %>
-    </p>
-    <% else %>
-    <p>
-      <%= link_to food_favorites_path(@food), method: :post do %>
-        ♡<%= @food.favorites.count %> いいね
+    </div>
+    <div class="posted_date">
+     <%= @food.created_at.strftime('%Y/%m/%d') %>
+    </div>
+      
+    <table class="food-box1">
+      
+      <td style="width: 30%">
+        <!-- いいねボタン -->
+        <% if @food.favorited_by?(current_user) %>
+            <%= link_to food_favorites_path(@food), method: :delete do %>
+              ♥<%= @food.favorites.count %> いいね
+            <% end %>
+          <% else %>
+            <%= link_to food_favorites_path(@food), method: :post do %>
+              ♡<%= @food.favorites.count %> いいね
+            <% end %>
+        <% end %>
+      </td>
+      
+      <td style="width: 30%">
+        コメント <i class="far fa-comment"></i>：<%= @food.comments.count %>
+      </td>
+    </table>  
+    
+    <div class="food-edit-button">
+      <!-- 投稿したuserにのみ表示 -->
+      <% if @food.user == current_user %>
+        <%= link_to "投稿編集", edit_food_path(@food.id), class: "btn btn-outline-dark" %>
       <% end %>
-    </p>
-  <% end %>
-</div>
-
+    </div>
+      
+    <div>
+      <%= form_with model: [@food, @comment] do |f| %>
+        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
+        <%= f.submit "送信する" %>
+      <% end %>
+    </div>
+    
+    <div class="food-box2">
+      
+      <% @food.comments.each do |comment| %>
+      <h3>コメント <i class="far fa-comment"></i></h3>
+        <table>
+          <td style="width: 120px">
+            <%= image_tag @food.user.get_profile_image(100,100) %>
+          </td>
+          <td>
+            <%= comment.user.name %>
+          </td>
+        </table>
+        
+        <div class="food-box3">
+          <div>
+            <%= comment.comment %>
+          </div>
+          <div class="posted_date">
+            <%= comment.created_at.strftime('%Y/%m/%d') %>
+          </div>
+          <div class="posted_date">
+            <% if comment.user == current_user %>
+              <%= link_to "削除", food_comment_path(comment.food, comment), method: :delete, class: "btn btn-outline-dark" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+  </div>  
 <div>
-  <p>コメント件数：<%= @food.comments.count %></p>
-  <% @food.comments.each do |comment| %>
-    <p><%= image_tag @food.user.get_profile_image(100,100) %></p>
-    <%= comment.user.name %>
-    <%= comment.created_at.strftime('%Y/%m/%d') %><%= comment.comment %>
-    <% if comment.user == current_user %>
-      <%= link_to "削除", food_comment_path(comment.food, comment), method: :delete %>
-    <% end %>
-  <% end %>
-</div>
-<div>
-  <%= form_with model: [@food, @comment] do |f| %>
-    <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-    <%= f.submit "送信する" %>
-  <% end %>
-</div>
