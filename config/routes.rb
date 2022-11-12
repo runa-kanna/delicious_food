@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   # ユーザー用ログイン・新規登録
   # URL /users/sign_in ...
-  devise_for :user, controllers: {
+  devise_for :user,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # 管理者用ログイン
   # URL /admin/sign_in ...
-  devise_for :admin, controllers: {
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
   
@@ -28,7 +28,11 @@ Rails.application.routes.draw do
     #top
     get '/' =>'homes#top'
     #user
-    resources :users, only:[:index, :show, :edit, :update]
+    resources :users, only:[:index, :show, :edit, :update] do
+      #user/idのいままでの投稿一覧
+      get 'history' => 'users#history', as: 'history'
+    end
+    
     #投稿
     resources :foods, only: [:index, :show, :destroy] do
       #コメント

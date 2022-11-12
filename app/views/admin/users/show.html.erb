@@ -1,23 +1,29 @@
-<h1>管理者User詳細</h1>
-
-<!-- ユーザーの詳細 -->
-<div>
-  <h3><%= @user.name %></h3>
-  <h3><%= @user.introduction %></h3>
-  <%= link_to edit_admin_user_path(@user.id) do %>
-    <%= image_tag @user.get_profile_image(100,100) %>
-  <% end %>
-  <p><%= link_to "プロフィール編集", edit_admin_user_path(@user.id) %></p>
+<div class="user-content">
+  <!-- title -->
+  <h2 class="mypage-title">管理者側My Page</h2>
+  <!-- name -->
+  <h1 class="user-name"><%= @user.name %></h1>
+  <!-- image.follow -->
+  <div class="image-follow">
+    <div class="user-image">
+      <%= image_tag @user.get_profile_image(200,200) %>
+    </div>
+    <!--フォロワーとフォロー中 -->
+    <div class="followings">
+      <h4>フォロー中  <%= @user.followings.count %></h4>
+    </div>
+    <div class="followers">
+      <h4>フォロワー  <%= @user.followers.count %></h4>
+    </div>
+  </div>
+  <p class="user-text"><%= @user.introduction %></p>
+  <div class="user-edit"> 
+    <!-- ゲストログインの場合は編集ボタンを表示しない -->
+      <% if @user.name != "guestuser" %>
+        <%= link_to "プロフィール編集", edit_admin_user_path(@user.id), class: "btn btn-outline-dark" %>
+      <% end %>
+  </div>
+  <div class="favorites-link">
+    <%= link_to "投稿履歴", admin_user_history_path(@user), class: "btn btn-outline-dark" %>
+  </div>
 </div>
-
-<!-- ユーザーの投稿一覧 -->
-
-<% @foods.each do |food| %>
-<div>
-  <p><%= image_tag food.get_image[0] %></p>
-  <p>投稿ユーザー画像：<%= image_tag food.user.get_profile_image(100,100) %></p>
-  <p>タイトル：<%= food.title %></p>
-  <p>説明：<%= food.body %></p>
-  <p>ユーザーネーム：<%= food.user.name %></p>
-</div>
-<% end %>
