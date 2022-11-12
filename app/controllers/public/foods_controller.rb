@@ -25,10 +25,7 @@ class Public::FoodsController < ApplicationController
   end
 
   def show
-    
     @food = Food.find(params[:id])
-    #コメントを投稿するためのインスタンス変数
-    @comment = Comment.new
   end
 
   #編集するFoodレコードを取得

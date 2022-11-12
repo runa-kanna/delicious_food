@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   }
   
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    delete '/users/sign_out' => 'devise/sessions#destroy'
   end
   
     #ゲストユーザー用ログイン
   devise_scope :user do
-    get 'users_guest_sign_in', to: 'users/sessions#guest_sign_in'
+    post 'users_guest_sign_in', to: 'users/sessions#guest_sign_in'
   end
 
   # 管理者用ログイン
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
       #いいね
       resource :favorites, only: [:index, :create, :destroy]
       #コメント
-      resources :comments, only: [:create, :destroy]
+      resources :comments, only: [:new, :create, :destroy]
     end
     #user
     resources :users,only:[:index, :show, :edit, :update] do

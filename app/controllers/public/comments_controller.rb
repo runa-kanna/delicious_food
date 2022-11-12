@@ -1,4 +1,10 @@
 class Public::CommentsController < ApplicationController
+  def new
+    #どの投稿に対してコメントするのかをfood_idを使って探す
+    @food = Food.find(params[:food_id])
+    #コメントを投稿するためのインスタンス変数
+    @comment = Comment.new
+  end
   
   def create
     food = Food.find(params[:food_id])
