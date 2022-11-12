@@ -67,7 +67,7 @@
             <%= comment.comment %>
           </div>
           <div class="posted_date">
-            <%= comment.created_at.strftime('%Y/%m/%d') %>
+            <%= comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
           </div>
           <div class="posted_date">
             <% if comment.user == current_user %>
