@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row no-gutters">
+        <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+            <div class="comment-box">
+                <h5 class="text-dark bg-light p-4 mb-0">コメントフォーム</h5>
+                <div class="form-body p-4">
+            
+                <%= form_with model: [@food, @comment] do |f| %>
+                    <%= f.text_area :comment, class:"form-control", rows: '5', placeholder: "コメントをここに" %>
+                    <hr>
+                    <%= f.submit "送信する", class:"btn btn-lg btn-block btn-info mt-4" %>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

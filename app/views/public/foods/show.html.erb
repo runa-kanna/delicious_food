@@ -38,7 +38,7 @@
       </td>
       
       <td style="width: 30%">
-        コメント <i class="far fa-comment"></i>：<%= @food.comments.count %>
+        <%= link_to "コメント", new_food_comment_path(@food) %> <i class="far fa-comment"></i>：<%= @food.comments.count %>
       </td>
     </table>  
     
@@ -48,21 +48,14 @@
         <%= link_to "投稿編集", edit_food_path(@food.id), class: "btn btn-outline-dark" %>
       <% end %>
     </div>
-      
-    <div>
-      <%= form_with model: [@food, @comment] do |f| %>
-        <%= f.text_area :comment, rows: '5', placeholder: "コメントをここに" %>
-        <%= f.submit "送信する" %>
-      <% end %>
-    </div>
-    
+
     <div class="food-box2">
       
       <% @food.comments.each do |comment| %>
       <h3>コメント <i class="far fa-comment"></i></h3>
         <table>
           <td style="width: 120px">
-            <%= image_tag @food.user.get_profile_image(100,100) %>
+            <%= image_tag comment.user.get_profile_image(100,100) %>
           </td>
           <td>
             <%= comment.user.name %>
