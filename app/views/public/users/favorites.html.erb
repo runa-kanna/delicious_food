@@ -1,4 +1,4 @@
-<h1>いいね一覧</h1>
+<h1>お気に入り投稿一覧</h1>
 
 <div class="card-list-container py-5">
   <% @favorite_foods.each do |food| %>
@@ -33,6 +33,9 @@
                   ♡<%= food.favorites.count %> いいね
                 <% end %>
               </p>
+              <P>
+                <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </P>
             <% end %>
         </span>
         </div>
