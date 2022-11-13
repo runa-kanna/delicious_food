@@ -25,6 +25,11 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 50 }
   #validates :profile_image, presence: true
   
+  # is_activeがtureならfalseを返すようにしている
+  def active_for_authentication?
+    super && (is_active == true)
+  end
+  
   # プロファイル画像と画像を設定していない場合の処理
   def get_profile_image(width, height)
     unless profile_image.attached?

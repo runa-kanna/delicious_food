@@ -1,24 +1,66 @@
 <h2>検索結果</h2>
 
-<table class="table table-hover table-inverse">
-  <!--検索対象モデルがUserの時 -->
+<!--検索対象モデルがUserの時 -->
   <% if @range == "User" %>
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.name %></td>
-        </tr>
-      <% end %>
-    </tbody>
+    <div class="users-content">
+      <h2 class="users-title">Users List</h2>
+      <div class="users-box">
+        <% @users.each do |user| %>
+        <table class="users-image">
+          <tr>
+            <td style="width: 200px">
+              <%= link_to admin_user_path(user.id) do %>
+                <%= image_tag user.get_profile_image(150,100) %>
+              <% end %>
+            </td>
+          </tr>
+        </table>
+        <div class="users-name">
+          User Name：<%= user.name %>
+        </div>
+        <div class="users-introduction">
+          Introduction：<%= user.introduction %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
   <% else %>
     <!--検索対象モデルがUserではない時(= 検索対象モデルがFoodの時) -->
     <tbody>
-      <% @foods.each do |food| %>
-        <tr>
-          <td><%= food.title %></td>
-          <td><%= food.body %></td>
-        </tr>
-      <% end %>
+      <div class="card-list-container py-5">
+        <% @foods.each do |food| %>
+        <div class="card w-50 mx-auto mt-4 shadow-lg">
+          <%= link_to admin_food_path(food.id) do %>
+            <%= image_tag food.get_image[0], size:'760x600' %>
+          <% end %>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-2">
+                <%= image_tag food.user.get_profile_image(100,100), class:"mt-3 rounded-circle"; %></p>
+              </div>
+              <div class="col-10">
+                <p class="card-title">
+                  <%= link_to(food_path(food.id), class:"text-dark") do %>
+                    <strong><i class="far fa-flag"></i><span> <%= food.title %></span></strong>
+                  <% end %>
+                </p>
+                <p class="card-text">説明：<%= food.body %></p>
+                <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
+                <span><%= link_to "#{food.comments.count} コメント", admin_food_path(food.id), class:"text-dark" %></span>
+                <span>♥<%= food.favorites.count %> いいね</span>
+                <P>
+                  <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
+                </p>
+                <p>
+                  <%= link_to "記事を削除", admin_food_path(food), method: :delete, class:"text-dark" %>
+                </P>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>  
     </tbody>
   <% end %>
 </table>

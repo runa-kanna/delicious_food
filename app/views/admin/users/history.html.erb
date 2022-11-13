@@ -13,22 +13,17 @@
         </div>
         <div class="col-10">
           <p class="card-title">
-            <%= link_to(food_path(food.id), class:"text-dark") do %>
+            <%= link_to(admin_food_path(food.id), class:"text-dark") do %>
               <strong><i class="far fa-flag"></i><span> <%= food.title %></span></strong>
             <% end %>
           </p>
           <p class="card-text">説明：<%= food.body %></p>
           <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
-          <span><%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
+          <span><%= link_to "#{food.comments.count} コメント", admin_food_path(food.id), class:"text-dark" %></span>
           <span>
             ♡<%= food.favorites.count %> いいね
         　</span>
-        　<P>
-            <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
-          </p>
-          <p>
-            <%= link_to "記事を削除", admin_food_path(food), method: :delete, class:"text-dark" %>
-          </P>
+        　
         </div>
       </div>
     </div>

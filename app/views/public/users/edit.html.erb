@@ -17,13 +17,19 @@
       </div>
       <div class="form-group">
         <label class="form-label">プロフィール</label>
-        <%= f.text_field :profile, class: "form-control" %><br>
+        <%= f.text_field :introduction, class: "form-control" %><br>
       </div>
-      <%= f.submit '保存する', class: "btn btn-success" %>
+      <table class="user-edit">
+        <tr>
+          <td style="width: 200px">
+            <%= f.submit '保存する', class: "btn btn-outline-dark" %>
+          </td>
+          <td style="width: 200px">
+            <%= link_to '退会する', unsubscribe_user_path, class: "btn btn-outline-dark" %>
+          </td>
+        </tr>
+      </table>
       <% end %>
-      
-      <%= link_to '退会する', unsubscribe_user_path %>
-
     </div>
   </div>
 </div>

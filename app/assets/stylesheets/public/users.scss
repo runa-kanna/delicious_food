@@ -72,7 +72,7 @@
   padding-left: 30px;
 }
 /* プロファイル編集 */
-.user-edit {
+.users-edit {
   padding-top: 3%;
   padding-left: 70%;
 }
@@ -96,6 +96,11 @@
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
   background-size: 100% 100%;
+}
+/* userの編集画面 */
+.user-edit {
+  text-align:center;
+  margin-bottom: 10%;
 }
 
 /* user一覧 */
@@ -142,4 +147,39 @@
   text-transform: uppercase;
   font-weight: normal;
   padding-bottom: 5%;
+}
+/* 退会確認画面 */
+.note-content {
+  background-size: cover;
+  background-image: url();
+  background-color: rgba(#fff, 0.4);
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  background-position: center top;
+  text-align:center;
+  padding-top: 10%;
+}
+.note-title {
+  font-size: 5rem;
+  font-family: 'Philosophr', serif;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: red;
+}
+.note-content p {
+  font-size: 1.5rem;
+  margin: 10px 0 42px;
+}
+.confirmation-button {
+  padding-top: 3%;
+  font-size: 0;
+}
+.not-unsubscribe-button {
+  display: inline-block;
+  font-size: 16px;
+}
+.unsubscribe-button {
+  display: inline-block;
+  font-size: 16px;
+  padding-left: 30px;
 }

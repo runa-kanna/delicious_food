@@ -1,7 +1,14 @@
 <div id="top" class="top-content";>
     <div class="background-white">
         <h2 class="top-title">Thank you for using our service.</h2>
-        <h2>管理者側のログインページです</h2>
+        <h2>こちらからは管理者側専用ページとなります</h2>
     
+        <!-- ログインしたらボタンは消える -->
+        <% if admin_signed_in? %>
+        <% else%>
+            <div class="login-button">
+                <%= link_to "ログイン", new_admin_session_path, class: "btn btn-outline-dark" %>
+            </div>
+        <% end %>
     </div>
 </div>
