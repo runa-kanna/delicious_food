@@ -57,8 +57,10 @@ class Public::FoodsController < ApplicationController
     #Foodの一覧ページへのパス
     redirect_to foods_path
   end
-
-
+  
+  def map
+    @food = Food.find(params[:food_id])
+  end
 
 
   #投稿データのストロングパラメータ

@@ -17,15 +17,14 @@
           <%= f.file_field :images, multiple: true %>
           <div class="input-group mb-3 mt-4">
             <div class="input-group-prepend">
-              <span class="input-group-text" aria-hidden="true"><i class="fas fa-building"></i></span>
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-mug-hot"></i></span>
             </div>
-            <%= f.text_field :title, class:"form-control", placeholder:"title" %>
+            <%= f.text_field :title, class:"form-control", placeholder:"TITLE" %>
           </div>
-          <%= f.text_area :body, class:"form-control", rows:"3", placeholder:"内容を" %>
+          <%= f.text_area :body, class:"form-control", rows:"3", placeholder:"投稿内容を書いてね！" %>
           
           <div class="field my-3">
-            <%= f.label :address %>
-            <%= f.text_field :address %>
+            <%= f.text_field :address, class:"form-control", placeholder:"よければお店の住所も教えて"  %>
           </div>
           
           <hr>

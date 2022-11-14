@@ -1,26 +1,52 @@
-<h1>編集画面</h1>
-
-<%= form_with model: @food, url: food_path(@food.id), method: :patch do |f| %>
-
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-
-  <h4>本文</h4>
-  <%= f.text_area :body %>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col-md-6 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+      <h5 class="text-dark bg-light p-4 mb-0">編集フォーム</h5>
+      <div class="form-body p-4">
+        <% if @food.errors.any? %>
+          <ul class="alert alert-danger" role="alert">
+            <h6 class="alert-heading">
+              <%= @food.errors.count %>件のエラーが発生しました
+            </h6>
+            <% @food.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
+        
+        <%= form_with model: @food, url: food_path(@food.id), method: :patch do |f| %>
+          
+          <div class="input-group mb-3 mt-4">
+            <div class="input-group-prepend">
+              <span class="input-group-text" aria-hidden="true"><i class="fas fa-mug-hot"></i></span>
+            </div>
+            <%= f.text_field :title, class:"form-control", placeholder:"TITLE" %>
+          </div>
+          <%= f.text_area :body, class:"form-control", rows:"3", placeholder:"変更内容を書いてね" %> 
+          <div class="field my-3">
+            <%= f.text_field :address, class:"form-control", placeholder:"よければお店の住所も教えて"  %>
+          </div> 
+            <%= f.file_field :images, multiple: true %>
+            
+          <% if @food.images.present? %>
+            <p>現在登録されている画像<br>
+            （削除するものはチェックしてください）
+            </p>
+            <% @food.images.each do |image| %>
+            <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
+            <%= image_tag image, size:"350x200" %> <br>
+            <% end %>
+          <% end %>
+          
+          <%= f.submit '変更を保存', class:"btn btn-lg btn-block btn-info mt-4" %>
+          <%= link_to "現在の投稿記事を全て削除", food_path(@food), method: :delete, class:"btn btn-lg btn-block btn-danger mt-4" %>
+         
+          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+           
   
-  <h4>画像</h4>
-    <%= f.file_field :images, multiple: true %>
-
-
-  <% if @food.images.present? %>
-    <p>現在登録されている画像（削除するものはチェックしてください）</p>
-    <% @food.images.each do |image| %>
-      <%= f.check_box :image_ids, {multiple: true}, image.id, false %>
-      <%= image_tag image, size:"100x100" %> <br>
-    <% end %>
-  <% end %>
-
-  <%= f.submit "変更を保存" %>
-  <%= link_to "現在の投稿記事を全て削除", food_path(@food), method: :delete %>
-
-<% end %>
+  
