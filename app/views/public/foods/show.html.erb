@@ -26,15 +26,10 @@
       
       <td style="width: 30%">
         <!-- いいねボタン -->
-        <% if @food.favorited_by?(current_user) %>
-            <%= link_to food_favorites_path(@food), method: :delete do %>
-              ♥<%= @food.favorites.count %> いいね
-            <% end %>
-          <% else %>
-            <%= link_to food_favorites_path(@food), method: :post do %>
-              ♡<%= @food.favorites.count %> いいね
-            <% end %>
-        <% end %>
+        <div id="favorite_buttons_<%= @food.id %>">
+          <%= render 'public/favorites/favorite', food: @food %>
+        </div>
+        
       </td>
       
       <td style="width: 30%">

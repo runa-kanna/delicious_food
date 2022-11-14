@@ -18,22 +18,14 @@
           <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
           <span><%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
           <span>
-            <% if food.favorited_by?(current_user) %>
-              <p>
-                <%= link_to food_favorites_path(food), method: :delete do %>
-                  ♥<%= food.favorites.count %> いいね
-                <% end %>
-              </p>
-              <% else %>
-              <p>
-                <%= link_to food_favorites_path(food), method: :post do %>
-                  ♡<%= food.favorites.count %> いいね
-                <% end %>
-              </p>
-              <P>
-                <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
-              </P>
-            <% end %>
+            
+            <div id="favorite_buttons_<%= food.id %>">
+              <%= render 'public/favorites/favorite', food: food %>
+            </div>
+            
+            <P>
+              <%= food.created_at.strftime('%Y/%m/%d %H:%M') %>
+            </P>
         </span>
         </div>
       </div>
