@@ -17,7 +17,7 @@
     </div>
   </div>
   <p class="user-text"><%= @user.introduction %></p>
-  <div class="user-edit"> 
+  <div class="users-edit"> 
     <!-- ゲストログインの場合は編集ボタンを表示しない -->
       <% if @user.name != "guestuser" %>
         <%= link_to "プロフィール編集", edit_admin_user_path(@user.id), class: "btn btn-outline-dark" %>

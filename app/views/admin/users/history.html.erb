@@ -1,32 +1,7 @@
 <h1>投稿履歴</h1>
 
 <div class="card-list-container py-5">
-  <% @foods.each do |food| %>
-  <div class="card w-50 mx-auto mt-4 shadow-lg">
-    <%= link_to admin_food_path(food.id) do %>
-      <%= image_tag food.get_image[0], size:'760x600' %>
-    <% end %>
-    <div class="card-body">
-      <div class="row">
-        <div class="col-2">
-          <%= image_tag food.user.get_profile_image(100,100), class:"mt-3 rounded-circle"; %></p>
-        </div>
-        <div class="col-10">
-          <p class="card-title">
-            <%= link_to(admin_food_path(food.id), class:"text-dark") do %>
-              <strong><i class="far fa-flag"></i><span> <%= food.title %></span></strong>
-            <% end %>
-          </p>
-          <p class="card-text">説明：<%= food.body %></p>
-          <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
-          <span><%= link_to "#{food.comments.count} コメント", admin_food_path(food.id), class:"text-dark" %></span>
-          <span>
-            ♡<%= food.favorites.count %> いいね
-        　</span>
-        　
-        </div>
-      </div>
-    </div>
-  </div>
-  <% end %>
+  
+  <%= render 'admin/foods/food', foods: @foods %>
+  
 </div>  
