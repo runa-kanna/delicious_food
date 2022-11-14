@@ -47,6 +47,8 @@ Rails.application.routes.draw do
   scope module: :public do
     #投稿
     resources :foods do
+      #map画面
+      get 'map' => 'foods#map', as: 'map'
       #いいね
       resource :favorites, only: [:index, :create, :destroy]
       #コメント
