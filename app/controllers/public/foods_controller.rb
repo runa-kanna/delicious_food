@@ -65,7 +65,7 @@ class Public::FoodsController < ApplicationController
   private
 
   def food_params
-    params.require(:food).permit(:title, :body, images: [])
+    params.require(:food).permit(:address, :latitude, :longitude, :title, :body, images: [])
   end
 
 end
