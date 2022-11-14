@@ -13,7 +13,7 @@
 /* 背景 */
 .user-content {
   background-size: cover;
-  background-image: url(cafe.jpg);
+  background-image: url(kusa.jpg);
    background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -178,4 +178,12 @@
   display: inline-block;
   font-size: 16px;
   padding-left: 30px;
+}
+.users-index-content {
+  background-size: cover;
+  background-image: url(cocoa.jpg);
+  background-color: rgba(#fff, 0.4);
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  background-position: center top;
 }
