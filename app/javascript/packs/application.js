@@ -15,7 +15,6 @@ import "../stylesheets/application"
 import '@fortawesome/fontawesome-free/js/all'
 import "skippr.min"
 import "script.js"
-//import "slick.js"
 
 Rails.start()
 Turbolinks.start()

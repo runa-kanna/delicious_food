@@ -4,6 +4,9 @@ class Food < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
   belongs_to :user, optional: true
+  
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
   validates :title, presence: true
   validates :body, presence: true
