@@ -8,7 +8,9 @@
         </td>
         <td class="users-follow">
           <!-- フォロー機能 -->
-          <%= render 'public/relationships/follow', user: user %>
+          <div id="follow-ajax">
+            <%= render 'public/relationships/follow', user: user %>
+          </div>
         </td>
       </tr>
     </table>

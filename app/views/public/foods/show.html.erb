@@ -3,7 +3,11 @@
   
   <div class="food-box">
     <table>
-      <td style="width: 150px"><%= image_tag @food.user.get_profile_image(100,100) %></td>
+      <td style="width: 150px">
+        <%= link_to user_path(@food.user) do %>
+          <%= image_tag @food.user.get_profile_image(100,100) %>
+        <% end %>
+      </td>
       <td class="food-user-name"><%= @food.user.name %></td>
     </table>
     
@@ -50,7 +54,9 @@
       <h3>コメント <i class="far fa-comment"></i></h3>
         <table>
           <td style="width: 120px">
-            <%= image_tag comment.user.get_profile_image(100,100) %>
+            <%= link_to user_path(comment.user) do %>
+              <%= image_tag comment.user.get_profile_image(100,100) %>
+            <% end %>  
           </td>
           <td>
             <%= comment.user.name %>
