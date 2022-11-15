@@ -14,5 +14,8 @@
  *= require_self
  */
  
- @import "skippr"; 
- 
+ .search_form {
+    padding-right: 5%;
+    text-align: right;
+    padding-bottom: 2%;
+ }

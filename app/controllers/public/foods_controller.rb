@@ -1,4 +1,5 @@
 class Public::FoodsController < ApplicationController
+  before_action :authenticate_user!
 
   #form_withに渡すための空のモデル
   def new
@@ -12,7 +13,7 @@ class Public::FoodsController < ApplicationController
 
     #保存出来たら一覧ページへ飛ぶ
     if  @food.save
-        redirect_to foods_path
+        redirect_to food_path(@food.id)
     #保存できなかったら投稿ページ
     else
         render :new
@@ -21,6 +22,7 @@ class Public::FoodsController < ApplicationController
 
   #テーブル内に存在する全てのレコードのインスタンスを代入
   def index
+    @user = current_user
     @foods = Food.all.order(created_at: :desc)
   end
 
@@ -32,6 +34,11 @@ class Public::FoodsController < ApplicationController
   #編集するFoodレコードを取得
   def edit
     @food = Food.find(params[:id])
+    if @food.user == current_user
+      render :edit
+    else
+      redirect_to foods_path
+    end
   end
 
   def update

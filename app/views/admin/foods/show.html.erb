@@ -3,15 +3,25 @@
   
   <div class="food-box">
     <table>
-      <td style="width: 150px"><%= image_tag @food.user.get_profile_image(100,100) %></td>
+      <td style="width: 150px">
+        <%= link_to admin_user_path(@food.user) do %>
+          <%= image_tag @food.user.get_profile_image(100,100) %>
+        <% end %>
+      </td>
       <td class="food-user-name"><%= @food.user.name %></td>
     </table>
     
     <div class="food-titles">
-      title：<%= @food.title %>
+      <i class="fas fa-flag"></i> <%= @food.title %>
     </div>
     <div class="food-body">
-      説明：<%= @food.body %>
+      <i class="fas fa-map-marker-alt"></i>  
+      <%= link_to food_map_path(@food), class:"text-dark" do %>
+        <%= @food.address %>
+      <% end %>
+    </div>
+    <div class="food-body">
+      <i class="fas fa-book-open"></i> <%= @food.body %>
     </div>
     <div class="food-image">
       <% @food.images.each do |image| %>
