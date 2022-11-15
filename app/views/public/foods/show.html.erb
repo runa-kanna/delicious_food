@@ -12,15 +12,16 @@
     </table>
     
     <div class="food-titles">
-      <i class="fas fa-flag"></i>　<%= @food.title %>
+      <i class="fas fa-flag"></i> <%= @food.title %>
     </div>
     <div class="food-body">
+      <i class="fas fa-map-marker-alt"></i>  
       <%= link_to food_map_path(@food), class:"text-dark" do %>
-        <i class="fas fa-car"></i>　<%= @food.address %>
+        <%= @food.address %>
       <% end %>
     </div>
     <div class="food-body">
-      <i class="fas fa-book-open"></i>　<%= @food.body %>
+      <i class="fas fa-book-open"></i> <%= @food.body %>
     </div>
     <div class="food-image">
       <% @food.images.each do |image| %>

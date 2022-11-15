@@ -12,6 +12,7 @@ class Food < ApplicationRecord
   validates :body, presence: true
   #validate :image_length
 
+
   def get_image
     unless images.attached?
       file_path = Rails.root.join('app/assets/images/noimage.jpg')
