@@ -16,7 +16,7 @@ class Public::UsersController < ApplicationController
 
   def edit
     #URLを参考に特定のidを持ったレコードを取得する
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def update
