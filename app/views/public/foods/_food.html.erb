@@ -1,7 +1,7 @@
 <% foods.each do |food| %>
   <div class="card w-50 mx-auto mt-4 shadow-lg">
     <%= link_to food_path(food.id) do %>
-      <%= image_tag food.get_image[0], size:'760x600' %>
+      <%= image_tag food.get_image[0], class:"card-img-top"; %>
     <% end %>
     <div class="card-body">
       <div class="row">

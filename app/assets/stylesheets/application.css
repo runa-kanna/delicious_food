@@ -19,3 +19,8 @@
     text-align: right;
     padding-bottom: 2%;
  }
+
+.jscroll-div {
+ overflow-y: scroll;
+ overflow-x: hidden;
+}
