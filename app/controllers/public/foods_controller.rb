@@ -11,12 +11,12 @@ class Public::FoodsController < ApplicationController
     @food = Food.new(food_params)
     @food.user_id = current_user.id
 
-    #保存出来たら一覧ページへ飛ぶ
+    #保存出来たら詳細ページへ飛ぶ
     if  @food.save
-        redirect_to food_path(@food.id)
+        redirect_to food_path(@food.id), notice: '新しく投稿しました'
     #保存できなかったら投稿ページ
     else
-        render :new
+        render :new, notice: '投稿に失敗しました'
     end
   end
 
@@ -35,9 +35,9 @@ class Public::FoodsController < ApplicationController
   def edit
     @food = Food.find(params[:id])
     if @food.user == current_user
-      render :edit
+      render :edit, notice: '投稿した内容を変更しました'
     else
-      redirect_to foods_path
+      redirect_to foods_path, notice: '変更に失敗しました'
     end
   end
 
@@ -50,9 +50,9 @@ class Public::FoodsController < ApplicationController
         end
     end
     if food.update(food_params)
-       redirect_to food_path(food.id)
+       redirect_to food_path(food.id), notice: '投稿した内容を変更しました'
     else
-      render :edit
+      render :edit, notice: '変更に失敗しました'
     end
   end
 
@@ -62,7 +62,7 @@ class Public::FoodsController < ApplicationController
     #削除
     @food.destroy
     #Foodの一覧ページへのパス
-    redirect_to foods_path
+    redirect_to foods_path, notice: '投稿を削除しました'
   end
   
   def map
