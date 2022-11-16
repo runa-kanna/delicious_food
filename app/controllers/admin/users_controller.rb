@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_admin!
+  
   def index
     #usersテーブルに保存されている全てのデータを取得して@usersに格納
     @users = User.all

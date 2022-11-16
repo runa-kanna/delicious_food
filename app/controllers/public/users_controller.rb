@@ -56,6 +56,7 @@ class Public::UsersController < ApplicationController
       redirect_to user_path(current_user) , notice: '投稿履歴はありません'
     end
   end    
+  
 
   private
 
