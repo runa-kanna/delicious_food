@@ -1,6 +1,5 @@
 class Public::FoodsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_guest_user, only: [:new, :create, :edit]
 
   #form_withに渡すための空のモデル
   def new

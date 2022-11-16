@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-right: 5%;">
           <ul class="navbar-nav ml-auto">
           <!--ユーザーがログインしている時-->
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.name != "guestuser" %>
             <li>
               <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
@@ -39,16 +39,26 @@
               <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
             </li>
             <li>
-              <!-- ゲストログインの場合は編集ボタンを表示しない -->
-              <!--<#% if @user.name != "guestuser" %>-->
-                <%= link_to "新規投稿", new_food_path, class: 'nav-link text-dark' %>
-              <!--<#% end %>-->
-              
+              <%= link_to "新規投稿", new_food_path, class: 'nav-link text-dark' %>
             </li>
             <li>
               <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
-          
+            
+          <!--ゲストがログインしているとき-->
+          <% elsif user_signed_in? && current_user.name == "guestuser" %>
+            <li>
+              <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
+            </li>
+            <li>
+              <%= link_to '会員一覧', admin_users_path, class: 'nav-link text-dark' %>
+            </li>
+            <li>
+              <%= link_to "投稿一覧", foods_path, class: 'nav-link text-dark' %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
+            </li>
           <!--管理者がログインしているとき-->
           <% elsif admin_signed_in? %>
             <li>
@@ -59,6 +69,12 @@
             </li>
             <li>
               <%= link_to '投稿一覧', admin_foods_path, class: 'nav-link text-dark' %>
+            </li>
+            <li>
+              <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
+            </li>
+            <li>
+              <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
             </li>
             
           <!--ログインしていないとき-->
