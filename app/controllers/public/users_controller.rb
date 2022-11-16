@@ -25,7 +25,7 @@ class Public::UsersController < ApplicationController
     #ユーザーのアップデート
     @user.update(user_params)
     #ユーザーの詳細ページへのパス
-    redirect_to user_path(@user)
+    redirect_to user_path(@user), notice: '変更しました'
   end
 
   def unsubscribe
@@ -50,10 +50,12 @@ class Public::UsersController < ApplicationController
   
   #user/idの投稿履歴
   def history
-    @user = User.find_by(params[:user_id])
     @foods = Food.where(user_id:params[:user_id]).order(created_at: :desc)
-  end
-    
+    @food = Food.find_by(user_id:params[:user_id])
+    if @food == nil
+      redirect_to user_path(current_user) , notice: '投稿履歴はありません'
+    end
+  end    
 
   private
 
