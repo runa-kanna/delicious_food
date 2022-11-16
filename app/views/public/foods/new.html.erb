@@ -50,16 +50,9 @@ $('#food_images').on('change', function (e) {
 
     if(e.target.files.length > 3){
       
-      alert("投稿できる画像数は3枚までです");
-      submit.setAttribute("disabled",true);　//非活性にする！！！！
-      return false;
-    }else{
-      submit.setAttribute("disabled",false);//活性にする！！！！
-    }
-
       alert('一度に投稿できるのは3枚までです。');
       // 3枚以上の画像を選択していた場合、選択したファイルをリセット。
-      $('#food_images').val = "";
+      $('#food_images').val("");
 
       // 以前の画像のプレビューが残っていた場合は、
       // まだ画像選択できていると勘違いを誘発するため初期化。
