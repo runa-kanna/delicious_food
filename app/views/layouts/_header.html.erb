@@ -1,6 +1,7 @@
 <header class="shadow-sm sticky-top">
+  
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand p-1" href="/"><%= image_tag('') %></a>
+    <a class="navbar-brand p-1" href="/"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,7 +11,7 @@
         <% if admin_signed_in? %>
           <h3>管理者がログインしています</h3>
         <% else %>
-          <font size="7"><%= link_to root_path,class: 'nav-link text-dark' do %>
+          <font class="top"><%= link_to root_path,class: 'nav-link text-dark' do %>
             <i class="fas fa-utensils"></i>DELICIOUSFOOD</font>
           <% end %>
         <% end %>
@@ -38,7 +39,11 @@
               <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
             </li>
             <li>
-              <%= link_to "新規投稿", new_food_path, class: 'nav-link text-dark' %>
+              <!-- ゲストログインの場合は編集ボタンを表示しない -->
+              <!--<#% if @user.name != "guestuser" %>-->
+                <%= link_to "新規投稿", new_food_path, class: 'nav-link text-dark' %>
+              <!--<#% end %>-->
+              
             </li>
             <li>
               <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
