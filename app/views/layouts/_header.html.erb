@@ -51,7 +51,7 @@
               <%= link_to "マイページ", user_path(current_user.id), class: 'nav-link text-dark' %>
             </li>
             <li>
-              <%= link_to '会員一覧', admin_users_path, class: 'nav-link text-dark' %>
+              <%= link_to '会員一覧', users_path, class: 'nav-link text-dark' %>
             </li>
             <li>
               <%= link_to "投稿一覧", foods_path, class: 'nav-link text-dark' %>
@@ -73,10 +73,6 @@
             <li>
               <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
             </li>
-            <li>
-              <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
-            </li>
-            
           <!--ログインしていないとき-->
           <% else %>
             <li>

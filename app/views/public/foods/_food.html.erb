@@ -19,7 +19,8 @@
           <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= link_to "#{food.address}", food_map_path(food), class:"text-dark" %></p>
           <p class="card-text"><i class="fas fa-book-open"></i> <%= food.body %></p>
           <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
-          <span><%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
+          <span>
+            <%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
           <span>
             
             <div id="favorite_buttons_<%= food.id %>">
