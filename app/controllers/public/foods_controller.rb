@@ -28,7 +28,7 @@ class Public::FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
-    @user = Food.find_by(params[:user_id])
+    @user = User.find_by(name: 'guestuser')
   end
 
   #編集するFoodレコードを取得
