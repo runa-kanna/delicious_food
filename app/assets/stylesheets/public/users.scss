@@ -13,7 +13,7 @@
 /* 背景 */
 .user-content {
   background-size: cover;
-  background-image: url(kusa.jpg);
+  background-image: image-url("kusa.jpg");
    background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -90,7 +90,7 @@
 .cover-user-edit {
   height: 100%;
   width: 100%;
-  background-image: url();
+  background-image: image-url("");
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
   background-size: 100% 100%;
@@ -105,7 +105,7 @@
 /* 背景 */
 .users-content {
   background-size: cover;
-  background-image: url(cafe2.jpg);
+  background-image: image-url("cafe2.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -147,7 +147,7 @@
 /* 退会確認画面 */
 .note-content {
   background-size: cover;
-  background-image: url();
+  background-image: image-url("");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -181,7 +181,7 @@
 }
 .users-index-content {
   background-size: cover;
-  background-image: url(cocoa.jpg);
+  background-image: image-url("cocoa.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
