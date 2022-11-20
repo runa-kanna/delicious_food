@@ -10,7 +10,7 @@
     </table>
     <div class="users-name">
       User Name：
-      <%= link_to admin_user_path(user) do %>
+      <%= link_to admin_user_path(user), class:"text-dark" do %>
         <%= user.name %>
       <% end %>
     </div>

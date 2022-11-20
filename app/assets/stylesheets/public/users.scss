@@ -187,3 +187,58 @@
   min-height: 100vh;
   background-position: center top;
 }
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .user-content {
+    background-image: image-url("kusa.jpg");
+    background-size: auto;
+    background-color: rgba(#fff, 0.4);
+    background-blend-mode: overlay;
+    min-height: 100vh;
+    background-position: center top;
+  }
+  
+  .mypage-title {
+    font-size: 3rem;
+    font-family: 'Philosophr', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-top: 7%;
+    padding-left: 10%;
+  }
+  
+  .user-name {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 5%;
+    text-align: center;
+  }
+  
+  .image-follow {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 20%;
+  }
+  
+  .user-image {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 5%;
+    padding-left: 20%;
+  }
+  
+  .user-follow {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 20%;
+  }
+  
+  
+}

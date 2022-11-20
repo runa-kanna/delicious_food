@@ -31,15 +31,20 @@
   </div>
   <p class="user-text"><%= @user.introduction %></p>
   <div class="users-edit">
-    <!-- ゲストログインの場合は編集ボタンを表示しない -->
-      <% if @user.name != "guestuser" %>
-        <% if current_user == @user %>
-          <%= link_to "プロフィール編集", edit_user_path(@user.id), class: "btn btn-outline-dark" %>
-        <% end %>
+  <!-- ゲストログインの場合は編集ボタンを表示しない -->
+    <% if @user.name != "guestuser" %>
+      <% if current_user == @user %>
+        <%= link_to "プロフィール編集", edit_user_path(@user.id), class: "btn btn-outline-dark" %>
       <% end %>
+    <% end %>
   </div>
   <div class="food-all">
-    <%= link_to "投稿履歴", user_history_path(@user), class: "btn btn-outline-dark" %>
+  <!-- ゲストログインの場合は編集ボタンを表示しない -->
+    <% if @user.name != "guestuser" %>
+      <% if current_user == @user %>
+        <%= link_to "投稿履歴", user_history_path(@user), class: "btn btn-outline-dark" %>
+      <% end %>
+    <% end %>
   </div>
   <div class="favorites-link">
     <%= link_to "お気に入り投稿", user_favorites_path(@user), class: "btn btn-outline-dark" %>

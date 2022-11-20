@@ -12,7 +12,7 @@
         </div>
         <div class="col-10">
           <p class="card-title">
-            <%= link_to(food_path(food.id), class:"text-dark") do %>
+            <%= link_to(admin_food_path(food.id), class:"text-dark") do %>
               <strong><i class="far fa-flag"></i><span> <%= food.title %></span></strong>
             <% end %>
           </p>
