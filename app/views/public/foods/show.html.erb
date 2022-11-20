@@ -1,9 +1,9 @@
 <div class="food-content">
   <%= notice %>
-  <h2 class="food-title">投稿詳細</h2>
+  <h2 class="food-title"></h2>
   
   <div class="food-box">
-    <table>
+    <tabl>
       <td style="width: 150px">
         <%= link_to user_path(@food.user) do %>
           <%= image_tag @food.user.get_profile_image(100,100) %>
@@ -33,7 +33,7 @@
      <%= @food.created_at.strftime('%Y/%m/%d %H:%M') %>
     </div>
       
-    <table class="food-box1">
+    <table class="food-box1" style="margin: 5% 0;">
       
       <td style="width: 30%">
         <!-- いいねボタン -->
