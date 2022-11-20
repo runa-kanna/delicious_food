@@ -1,10 +1,10 @@
 <%- if controller_name != 'sessions' %>
   <p>会員登録がお済みの方は
     <%= link_to "こちら", new_session_path(resource_name) %>
-    からログインしてください。</p>
+    から<br class="br-sp">ログインしてください。</p>
 <% end %>
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
   <p>会員登録がお済みではない方は
     <%= link_to "こちら", new_registration_path(resource_name) %>
-    から新規会員登録を行なってください。</p>
+    から<br class="br-sp">新規会員登録を行なってください。</p>
 <% end %>

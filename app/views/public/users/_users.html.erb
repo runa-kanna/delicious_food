@@ -15,7 +15,10 @@
       </tr>
     </table>
     <div class="users-name">
-      User Name：<%= user.name %>
+      User Name：
+      <%= link_to user_path(user), class:"text-dark" do %>
+        <%= user.name %>
+      <% end %>
     </div>
     <div class="users-introduction">
       Introduction：<%= user.introduction %>

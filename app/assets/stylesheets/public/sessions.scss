@@ -43,3 +43,8 @@
     padding-left: 10%;
     padding-bottom: 20%;
 }
+
+/* レスポンシブ対応 */
+@media screen and (min-width: 425px){
+.br-sp {display: none; }
+}
