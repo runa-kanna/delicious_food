@@ -213,7 +213,6 @@
     font-family: 'Philosophr', serif;
     font-weight: normal;
     padding-top: 5%;
-    text-align: center;
   }
   
   .image-follow {
@@ -221,7 +220,7 @@
     font-family: 'Philosophr', serif;
     font-weight: normal;
     padding-top: 1%;
-    padding-left: 20%;
+    padding-left: 35%;
   }
   
   .user-image {
@@ -240,5 +239,47 @@
     padding-left: 20%;
   }
   
+  .user-text {
+    font-size: 1rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 40%;
+  }
   
+  .users-edit {
+    padding-left: 50%;
+  }
+  
+  .food-all {
+    padding-left: 50%;
+  }
+  
+  .favorites-link {
+    padding-left: 50%;
+    padding-to0: 12px;
+  }
+  
+  
+  .users-title {
+    font-size: 3rem;
+    font-family: 'Philosophr', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-top: 7%;
+    padding-left: 10%;
+  }
+  
+  .users-box {
+    padding: 5% 10%;
+  }
+  
+  
+  .note-title {
+    font-size: 2rem;
+  }
+  
+  .note-title p {
+    font-size: 1.25rem;
+  }
 }
