@@ -22,3 +22,9 @@
   min-height: 100vh;
   background-position: center top;
 }
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .users-name {
+  }
+}

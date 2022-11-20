@@ -43,3 +43,10 @@
     padding-left: 10%;
     padding-bottom: 20%;
 }
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .signup-title {
+   font-size: 3rem;
+  } 
+}

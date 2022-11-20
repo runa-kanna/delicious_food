@@ -1,4 +1,4 @@
-<% users.each do |user| %>
+  <% users.each do |user| %>
     <table class="users-image">
       <tr>
         <td style="width: 200px">
@@ -18,10 +18,11 @@
       UserID: <%= user.id %><br>
       登録日: <%= user.created_at.strftime('%Y/%m/%d') %><br>
       会員ステータス:
-          <% if user.is_active == true %>
-            有効
-          <% else %>
-            退会</span>
-          <% end %>
+      <% if user.is_active == true %>
+        有効
+      <% else %>
+        退会
+      <% end %>
     </div>
-    <% end %>
+    <hr>
+  <% end %>

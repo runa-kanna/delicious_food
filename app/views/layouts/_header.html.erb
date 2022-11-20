@@ -1,5 +1,5 @@
 <header class="shadow-sm">
-  <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light" st>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,7 +7,7 @@
     <div class="col-7">
       <!--管理者がログインしているとき-->
       <% if admin_signed_in? %>
-        <h3>管理者がログインしています</h3>
+        <h3 class="admin-login">管理者がログインしています</h3>
       <% else %>
         <font class="top"><%= link_to root_path,class: 'nav-link text-dark' do %>
           <i class="fas fa-utensils"></i>DELICIOUSFOOD</font>
@@ -76,9 +76,6 @@
           </li>
           <li>
             <%= link_to '投稿一覧', admin_foods_path, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
           </li>
         <!--ログインしていないとき-->
         <% else %>

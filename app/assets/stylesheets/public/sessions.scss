@@ -45,6 +45,8 @@
 }
 
 /* レスポンシブ対応 */
-@media screen and (min-width: 425px){
-.br-sp {display: none; }
+@media screen and (max-width:425px) {
+  .login-title {
+   font-size: 3rem;
+  } 
 }
