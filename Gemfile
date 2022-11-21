@@ -63,11 +63,9 @@ gem 'dotenv-rails'
 gem 'geocoder'
 gem 'kaminari'
 
-gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
 
-gem "net-smtp"
 gem "net-pop"
 gem "net-imap"

@@ -30,16 +30,15 @@
 }
 
 .navbar {
- position: fixed;
- width: 100%;
- z-index: 999;/*最前面へ*/
+    width: 100%; /* 幅いっぱいを指定 */
+    position: fixed; 
 }
 
 
 
 /* レスポンシブ対応 */
 @media screen and (max-width:425px) {
-  .admin-login {
-    font-size: 0.75rem;
+  .login-text {
+      width: 60%;
   }
 }
