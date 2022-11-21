@@ -49,7 +49,6 @@
 $('#food_images').on('change', function (e) {
 
     if(e.target.files.length > 3){
-      
       alert('一度に投稿できるのは3枚までです。');
       // 3枚以上の画像を選択していた場合、選択したファイルをリセット。
       $('#food_images').val("");

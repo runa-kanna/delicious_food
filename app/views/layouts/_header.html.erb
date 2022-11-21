@@ -1,3 +1,4 @@
+
 <header class="shadow-sm">
   <nav class="navbar navbar-expand-md navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,20 +83,7 @@
           </li>
         <!--ログインしていないとき-->
         <% else %>
-          <li>
-            <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, { method: "post", class: 'nav-link text-dark' } %>
-          </li>
-          <li>
-            <%= link_to 'about', about_path, class: 'nav-link text-dark' %>
-          </li>
         <% end %>
-        </ul>
       </div>
     </div>
   </nav>

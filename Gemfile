@@ -61,6 +61,7 @@ gem 'net-smtp'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'geocoder'
+
 gem 'kaminari'
 
 group :production do
