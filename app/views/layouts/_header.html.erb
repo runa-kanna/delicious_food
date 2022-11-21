@@ -1,22 +1,24 @@
-<header class="shadow-ml sticky-top">
-  
+<header class="shadow-sm">
   <nav class="navbar navbar-expand-md navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="col-7">
-      <!--管理者がログインしているとき-->
-      <% if admin_signed_in? %>
-        <h3>管理者がログインしています</h3>
-      <% else %>
-        <font class="top"><%= link_to root_path,class: 'nav-link text-dark' do %>
-          <i class="fas fa-utensils"></i>DELICIOUSFOOD</font>
+    <div class="col-4">
+      <div class="ligin-text">
+        <!--管理者がログインしているとき-->
+        <% if admin_signed_in? %>
+          <h3 class="admin-login">管理者がログインしています</h3>
+        <% else %>
+          <font class="top">
+            <%= link_to root_path,class: 'nav-link text-dark' do %>
+            <i class="fas fa-utensils"></i>DELICIOUSFOOD</font>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
       
-    <div class="col-5">
+    <div class="col-8" style="text-align:right;">
       <div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-right: 5%;">
         <ul class="navbar-nav ml-auto">
         <!--ユーザーがログインしている時-->
@@ -78,25 +80,9 @@
           <li>
             <%= link_to '投稿一覧', admin_foods_path, class: 'nav-link text-dark' %>
           </li>
-          <li>
-            <%= link_to "ユーザー一覧", users_path, class: 'nav-link text-dark' %>
-          </li>
         <!--ログインしていないとき-->
         <% else %>
-          <li>
-            <%= link_to "新規登録", new_user_registration_path, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= link_to "ログイン", new_user_session_path, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, { method: "post", class: 'nav-link text-dark' } %>
-          </li>
-          <li>
-            <%= link_to 'about', about_path, class: 'nav-link text-dark' %>
-          </li>
         <% end %>
-        </ul>
       </div>
     </div>
   </nav>

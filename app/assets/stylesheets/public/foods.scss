@@ -13,6 +13,8 @@
 /* 背景 */
 .food-content {
   background-size: cover;
+
+
   background-image: image-url("hana.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
@@ -74,6 +76,7 @@
 .food-box3 {
   padding: 2% 6%;
 }
+
 
 .card {
   margin: 10% 25%;
@@ -183,5 +186,9 @@
   }
   
   .favorite_buttons_1 p {
+  }
+  
+  .food-box1 {
+    font-size: 1rem;
   }
 }

@@ -65,3 +65,18 @@
   height: 1000px;
 }
 
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  #container {
+   height: 600px;
+  }
+  
+  .top-title {
+    font-size: 2rem;
+  }
+  
+  .top-text {
+    font-size: 1rem;
+  }
+}

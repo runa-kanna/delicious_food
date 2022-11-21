@@ -1,3 +1,51 @@
 // Place all the styles related to the admin/foods controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .card {
+    margin: 5% 5%;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+  }
+  
+  .card-body {
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+  }
+    
+  .col-2 {
+    display: none; 
+  }
+  
+  .food-box {
+    padding: 0 5%;
+  }
+  
+  .food-titles {
+    padding-top: 10%;
+  }
+  
+  .food-body {
+    padding-top: 5%;
+  }
+  
+  .food-image {
+    padding-top: 5%;
+  }
+  
+  .favorite_buttons_1 p {
+  }
+  
+  .food-box1 {
+    font-size: 1rem;
+  }
+}

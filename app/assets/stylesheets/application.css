@@ -28,3 +28,17 @@
  overflow-y: scroll;
  overflow-x: hidden;
 }
+
+.navbar {
+    width: 100%; /* 幅いっぱいを指定 */
+    position: fixed; 
+}
+
+
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .login-text {
+      width: 60%;
+  }
+}
