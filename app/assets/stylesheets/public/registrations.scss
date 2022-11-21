@@ -12,7 +12,7 @@
 /* 画面中央と背景・余白の指定 */
 .signup-content {
   background-size: cover;
-  background-image: image-url('cafe2.jpg');
+  background-image: image-url("cafe2.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -42,4 +42,11 @@
     padding-top: 20px;
     padding-left: 10%;
     padding-bottom: 20%;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .signup-title {
+   font-size: 3rem;
+  } 
 }

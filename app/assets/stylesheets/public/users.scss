@@ -13,7 +13,7 @@
 /* 背景 */
 .user-content {
   background-size: cover;
-  background-image: url(kusa.jpg);
+  background-image: image-url("kusa.jpg");
    background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -90,7 +90,7 @@
 .cover-user-edit {
   height: 100%;
   width: 100%;
-  background-image: url();
+  background-image: image-url("");
   background-color: rgba(255, 255, 255, 0.4);
   background-blend-mode: lighten;
   background-size: 100% 100%;
@@ -105,7 +105,7 @@
 /* 背景 */
 .users-content {
   background-size: cover;
-  background-image: url(cafe2.jpg);
+  background-image: image-url("cafe2.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -147,7 +147,7 @@
 /* 退会確認画面 */
 .note-content {
   background-size: cover;
-  background-image: url();
+  background-image: image-url("");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -181,9 +181,105 @@
 }
 .users-index-content {
   background-size: cover;
-  background-image: url(cocoa.jpg);
+  background-image: image-url("cocoa.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
   background-position: center top;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .user-content {
+    background-image: image-url("kusa.jpg");
+    background-size: auto;
+    background-color: rgba(#fff, 0.4);
+    background-blend-mode: overlay;
+    min-height: 100vh;
+    background-position: center top;
+  }
+  
+  .mypage-title {
+    font-size: 3rem;
+    font-family: 'Philosophr', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-top: 7%;
+    padding-left: 10%;
+  }
+  
+  .user-name {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 5%;
+  }
+  
+  .image-follow {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 35%;
+  }
+  
+  .user-image {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 5%;
+    padding-left: 20%;
+  }
+  
+  .user-follow {
+    font-size: 2rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 20%;
+  }
+  
+  .user-text {
+    font-size: 1rem;
+    font-family: 'Philosophr', serif;
+    font-weight: normal;
+    padding-top: 1%;
+    padding-left: 40%;
+  }
+  
+  .users-edit {
+    padding-left: 50%;
+  }
+  
+  .food-all {
+    padding-left: 50%;
+  }
+  
+  .favorites-link {
+    padding-left: 50%;
+    padding-to0: 12px;
+  }
+  
+  
+  .users-title {
+    font-size: 3rem;
+    font-family: 'Philosophr', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding-top: 7%;
+    padding-left: 10%;
+  }
+  
+  .users-box {
+    padding: 5% 10%;
+  }
+  
+  
+  .note-title {
+    font-size: 2rem;
+  }
+  
+  .note-title p {
+    font-size: 1.25rem;
+  }
 }

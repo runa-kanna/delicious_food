@@ -15,10 +15,8 @@
       <i class="fas fa-flag"></i> <%= @food.title %>
     </div>
     <div class="food-body">
-      <i class="fas fa-map-marker-alt"></i>  
-      <%= link_to food_map_path(@food), class:"text-dark" do %>
+      <i class="fas fa-map-marker-alt"></i>
         <%= @food.address %>
-      <% end %>
     </div>
     <div class="food-body">
       <i class="fas fa-book-open"></i> <%= @food.body %>
@@ -71,6 +69,7 @@
             <%= link_to "削除", admin_food_comment_path(comment.food, comment), method: :delete, class: "btn btn-outline-dark" %>
           </div>
         </div>
+        <hr>
       <% end %>
     </div>
     

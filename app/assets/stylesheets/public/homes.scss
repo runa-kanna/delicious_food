@@ -13,7 +13,7 @@
 /* 画面中央と余白・の指定 */
 .top-content {
   background-size: cover;
-  background-image: url(pancake.jpg);
+  background-image: image-url("pancake.jpg");
   background-color: rgba(#fff, 0.4);
   background-blend-mode: overlay;
   min-height: 100vh;
@@ -47,21 +47,35 @@
 
  /* aboutページのスライドショー */
  .image1 {
-  background-image: url(hamburger.jpg);
+  background-image: image-url("hamburger.jpg");
 }
 .image2 {
-  background-image: url(supa.jpg);
+  background-image: image-url("supa.jpg");
 }
 .image3 {
-  background-image: url(rokomoko.jpg);
+  background-image: image-url("rokomoko.jpg");
 }
 .image4 {
-  background-image: url(omuraisu.jpg);
+  background-image: image-url("omuraisu.jpg");
 }
 .image5 {
-  background-image: url(cafe2.jpg);
+  background-image: image-url("cafe2.jpg");
 }
 #container{
-  height: 800px;
-  width: 1000px;
+  height: 1000px;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  #container {
+   height: 600px;
+  }
+  
+  .top-title {
+    font-size: 2rem;
+  }
+  
+  .top-text {
+    font-size: 1rem;
+  }
 }

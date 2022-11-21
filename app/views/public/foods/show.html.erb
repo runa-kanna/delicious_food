@@ -1,9 +1,9 @@
 <div class="food-content">
   <%= notice %>
-  <h2 class="food-title">投稿詳細</h2>
+  <h2 class="food-title"></h2>
   
   <div class="food-box">
-    <table>
+    <tabl>
       <td style="width: 150px">
         <%= link_to user_path(@food.user) do %>
           <%= image_tag @food.user.get_profile_image(100,100) %>
@@ -33,7 +33,7 @@
      <%= @food.created_at.strftime('%Y/%m/%d %H:%M') %>
     </div>
       
-    <table class="food-box1">
+    <table class="food-box1" style="margin: 5% 0;">
       
       <td style="width: 30%">
         <!-- いいねボタン -->
@@ -44,7 +44,13 @@
       </td>
       
       <td style="width: 30%">
-        <%= link_to "コメント", new_food_comment_path(@food) %> <i class="far fa-comment"></i>：<%= @food.comments.count %>
+        <% if @user != current_user %>
+          <%= link_to new_food_comment_path(@food)  do %> 
+            コメント件数 <i class="far fa-comment"></i>：<%= @food.comments.count %>
+          <% end %>
+        <% else %>
+          <i class="far fa-comment"></i>コメント件数：<%= @food.comments.count %>
+        <% end %>
       </td>
     </table>  
     
@@ -83,6 +89,7 @@
             <% end %>
           </div>
         </div>
+        <hr>
       <% end %>
     </div>
     
