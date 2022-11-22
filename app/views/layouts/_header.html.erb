@@ -1,10 +1,10 @@
 <header class="shadow-sm">
-  <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="nav navbar-expand-md navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="col-4">
+    <div class="col-5">
       <div class="ligin-text">
         <!--管理者がログインしているとき-->
         <% if admin_signed_in? %>
@@ -18,7 +18,7 @@
       </div>
     </div>
       
-    <div class="col-8" style="text-align:right;">
+    <div class="col-7 ml-auto">
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <!--ユーザーがログインしている時-->
@@ -38,15 +38,6 @@
           <li>
             <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
           </li>
-          <li>
-            <%= form_with url: search_path, local: true, method: :get do |f| %>
-              <%= f.text_field :word %>
-              <%= f.select :range, options_for_select([['User'], ['Food']]) %>
-              <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-              <%= f.submit "検索", class: "btn btn-primary" %>
-            <% end %>
-          </li>
-          
         <!--ゲストがログインしているとき-->
         <% elsif user_signed_in? && current_user.name == "guestuser" %>
           <li>
@@ -60,14 +51,6 @@
           </li>
           <li>
             <%= link_to "ログアウト", users_sign_out_path, method: :delete, class: 'nav-link text-dark' %>
-          </li>
-          <li>
-            <%= form_with url: search_path, local: true, method: :get do |f| %>
-              <%= f.text_field :word %>
-              <%= f.select :range, options_for_select([['User'], ['Food']]) %>
-              <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
-              <%= f.submit "検索", class: "btn btn-primary" %>
-          <% end %>
           </li>
         <!--管理者がログインしているとき-->
         <% elsif admin_signed_in? %>
@@ -94,6 +77,21 @@
           <li>
             <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'nav-link text-dark', method: :post %>
           </li>
+        <% end %>
+        </ul>
+        <% if user_signed_in? || admin_signed_in? %> 
+        <ul class="header-search navbar-nav">
+          <li>
+            <%= form_with url: search_path, local: true, method: :get do |f| %>
+            <div>
+              <%= f.text_field :word %>
+              <%= f.select :range, options_for_select([['User'], ['Food']]) %>
+              <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
+              <%= f.submit "検索", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+          </li>
+        </ul>
         <% end %>
       </div>
     </div>
