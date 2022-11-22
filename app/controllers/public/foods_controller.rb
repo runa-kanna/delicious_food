@@ -13,7 +13,7 @@ class Public::FoodsController < ApplicationController
 
     #保存出来たら詳細ページへ飛ぶ
     if  @food.save
-        redirect_to food_path(@food.id), notice: '新しく投稿しました'
+        redirect_to foods_path, notice: '新しく投稿しました'
     #保存できなかったら投稿ページ
     else
         render :new, notice: '投稿に失敗しました'
