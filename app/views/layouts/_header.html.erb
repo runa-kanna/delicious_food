@@ -80,8 +80,20 @@
           <li>
             <%= link_to '投稿一覧', admin_foods_path, class: 'nav-link text-dark' %>
           </li>
-        <!--ログインしていないとき-->
         <% else %>
+        <!--ログインしていないとき-->
+          <li>
+            <%= link_to '新規登録', new_user_registration_path, class: 'nav-link text-dark' %>
+          </li>
+          <li>
+            <%= link_to 'ログイン', user_session_path, class: 'nav-link text-dark' %>
+          </i>
+          <li>
+            <%= link_to 'about', about_path, class: 'nav-link text-dark' %>
+          </li>
+          <li>
+            <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'nav-link text-dark', method: :post %>
+          </li>
         <% end %>
       </div>
     </div>
