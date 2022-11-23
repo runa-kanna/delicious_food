@@ -1,4 +1,4 @@
-<header class="shadow-sm">
+<header class="">
   <nav class="nav navbar-expand-md navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -83,7 +83,7 @@
         <ul class="header-search navbar-nav">
           <li>
             <%= form_with url: search_path, local: true, method: :get do |f| %>
-            <div>
+            <div class="search">
               <%= f.text_field :word %>
               <%= f.select :range, options_for_select([['User'], ['Food']]) %>
               <%= f.select :search, options_for_select([["完全一致","perfect_match"], ["前方一致","forward_match"],  ["後方一致","backward_match"], ["部分一致","partial_match"]]) %>
