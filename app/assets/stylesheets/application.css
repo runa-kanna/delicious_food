@@ -18,6 +18,10 @@
   font-size: 1.5rem;
  }
  
+ .admin-login {
+  font-size: 2.1rem;
+ }
+ 
  .search_form {
     padding-right: 5%;
     text-align: right;
@@ -30,7 +34,7 @@
 }
 
 header {
- padding: 50px 10px 33px 10px;
+ padding: 50px 20px 33px 10px;
 }
 
 .nav {
@@ -56,6 +60,6 @@ header {
   }
   
   .search {
-   margin-bottom: 5%;
+   margin-bottom: 5%
   }
 }

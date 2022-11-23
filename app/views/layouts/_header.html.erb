@@ -1,4 +1,4 @@
-<header class="">
+<header>
   <nav class="nav navbar-expand-md navbar-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,9 @@
       <div class="ligin-text">
         <!--管理者がログインしているとき-->
         <% if admin_signed_in? %>
-          <h3 class="admin-login">管理者がログインしています</h3>
+          <%= link_to root_path,class: 'nav-link text-dark' do %>
+            <h3 class="admin-login">管理者がログインしています</h3>
+          <% end %>
         <% else %>
           <font class="top">
             <%= link_to root_path,class: 'nav-link text-dark' do %>
