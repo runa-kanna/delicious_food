@@ -74,9 +74,20 @@
   
   .top-title {
     font-size: 2rem;
+    padding-top: 10%;
+  }
+  
+  .top-content p {
+    padding-top: 10%;
   }
   
   .top-text {
     font-size: 1rem;
+    padding-top: 3%;
+  }
+  
+  .login-button {
+    padding: 40px 40px;
+    margin: 0;
   }
 }
