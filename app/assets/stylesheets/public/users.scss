@@ -18,7 +18,7 @@
   background-blend-mode: overlay;
   min-height: 100vh;
   background-position: center top;
-  padding-top: 10%;
+  padding-top: 5%;
 }
 /* 見出し */
 .mypage-title {
@@ -26,7 +26,6 @@
   font-family: 'Philosophr', serif;
   text-transform: uppercase;
   font-weight: normal;
-  padding-top: 7%;
   padding-left: 10%;
 }
 /* userの名前 */
@@ -188,6 +187,9 @@
   min-height: 100vh;
   background-position: center top;
 }
+
+/* ユーザーの投稿履歴 */
+  
 
 /* レスポンシブ対応 */
 @media screen and (max-width:425px) {
