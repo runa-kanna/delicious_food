@@ -34,10 +34,10 @@
 }
 
 header {
- padding: 50px 20px 33px 10px;
+ padding:50px 20px 0px 10px;
 }
 
-.nav {
+.navbar {
  position: fixed; /* ヘッダーを固定する */
  top: 0; /* 上部から配置の基準位置を決める */
  left: 0; /* 左から配置の基準位置を決める */
@@ -50,7 +50,7 @@ header {
 
 /* レスポンシブ対応 */
 @media screen and (max-width:425px) {
-  .admin-login {
+  .admins-login {
      font-size: 1rem;
      width: 100%;
   }

@@ -18,6 +18,7 @@
   background-blend-mode: overlay;
   min-height: 100vh;
   background-position: center top;
+  padding-top: 10%;
 }
 /* 見出し */
 .mypage-title {
@@ -281,5 +282,10 @@
   
   .note-title p {
     font-size: 1.25rem;
+  }
+  
+  .form-group {
+    width: 100%;
+    text-align: center;
   }
 }
