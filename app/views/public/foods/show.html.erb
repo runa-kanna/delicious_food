@@ -22,7 +22,7 @@
       <% end %>
     </div>
     <div class="food-body">
-      <i class="fas fa-book-open"></i> <%= @food.body %>
+      <i class="fas fa-book-open"></i> <%= safe_join(@food.body.split("\n"),tag(:br)) %>
     </div>
     <div class="food-image">
       <% @food.images.each do |image| %>
