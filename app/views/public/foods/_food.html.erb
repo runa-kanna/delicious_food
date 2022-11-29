@@ -21,8 +21,10 @@
               <% end %>
             </p>
             <p class="card-text"><i class="fas fa-map-marker-alt"></i> <%= link_to "#{food.address}", food_map_path(food), class:"text-dark" %></p>
-            <p class="card-text"><i class="fas fa-book-open"></i> <%= safe_join(food.body.split("\n"),tag(:br)) %></p>
-            <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
+            <%= safe_join(food.body.split("\n"),tag(:br)) %></p>
+            <%= link_to(user_path(food.user), class:"text-dark") do %>
+              <span><i class="fas fa-user"></i> By <%= food.user.name %> ｜ </span>
+            <% end %>
             <span>
               <%= link_to "#{food.comments.count} コメント", food_path(food.id), class:"text-dark" %></span>
             <span>
