@@ -52,7 +52,7 @@ Rails.application.routes.draw do
       #いいね
       resource :favorites, only: [:index, :create, :destroy]
       #コメント
-      resources :comments, only: [:new, :create, :destroy]
+      resources :comments, only: [:create, :destroy]
     end
     #user
     resources :users,only:[:index, :show, :edit, :update] do

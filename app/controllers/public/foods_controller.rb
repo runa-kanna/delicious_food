@@ -29,6 +29,7 @@ class Public::FoodsController < ApplicationController
   def show
     @food = Food.find(params[:id])
     @user = User.find_by(name: 'guestuser')
+    @comment = Comment.new
   end
 
   #編集するFoodレコードを取得
@@ -68,7 +69,7 @@ class Public::FoodsController < ApplicationController
   def map
     @food = Food.find(params[:food_id])
   end
-
+  
 
   #投稿データのストロングパラメータ
   private

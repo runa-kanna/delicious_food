@@ -45,9 +45,11 @@
       
       <td style="width: 30%">
         <% if @user != current_user %>
-          <%= link_to new_food_comment_path(@food)  do %> 
+          <!-- Button trigger modal -->
+          <button data-toggle="modal" data-target="#exampleModal">
             コメント件数 <i class="far fa-comment"></i>：<%= @food.comments.count %>
-          <% end %>
+          </button>
+  
         <% else %>
           <i class="far fa-comment"></i>コメント件数：<%= @food.comments.count %>
         <% end %>
@@ -92,7 +94,43 @@
         <hr>
       <% end %>
     </div>
-    
-  </div>  
-<div>
+  </div>
   
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">コメント</h5>
+        </div>
+        <div class="modal-body">
+          
+          <div class="container">
+            <div class="row no-gutters">
+              <div class="col-md-8 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
+                <div class="comment-box">
+                  <h5 class="text-dark bg-light p-10 mb-0">コメントフォーム</h5>
+                  <div class="form-body p-10">
+                    <%= form_with model: [@food, @comment] do |f| %>
+                    <%= f.text_area :comment, class:"form-control", rows: '5', placeholder: "コメントをここに" %>
+                    <hr>
+                    <%= f.submit "送信する", class:"btn btn-lg btn-block btn-info mt-4" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+          　</div>
+        　</div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js"></script>
+  
+<div>
